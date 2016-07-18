@@ -1,0 +1,93 @@
+<?php 
+
+if (empty($title)) $title=___('Sign-up');
+else $title=___($title);
+
+$this->setLayout('layout.phtml'); 
+include $this->_script('_error.phtml');
+
+$this->headScript()
+        ->appendFile(REL_ROOT_URL . '/application/default/views/public/js/jquery/jquery.validate.js');
+?>
+<div class="row-fluid">
+	<div class="col-md-6">
+<?php echo $this->blocks('signup/login/before') ?>
+<?php include $this->_script('signup/_login-offer.phtml'); ?>
+<?php echo $this->blocks('signup/login/after') ?>
+    
+<?php echo $this->blocks('signup/form/before') ?>
+<?php include $this->_script('_form.phtml'); ?>
+<?php echo $this->blocks('signup/form/after') ?>
+	</div>
+	<div class="col-md-1"></div>
+	<div class="col-md-5">
+		<div style="margin-top: -5px;" class="row alert alert-warning" id="row-product_id_page-0-0">
+            <div class="element">
+                <label for="product-1-1"><input checked="checked"
+                data-first_price="69.95" data-second_price="49.99" id=
+                "product-1-1" name="product_id_page-0[]" type="hidden" value=
+                "1-1"> <span class="am-product-title">M.N.U. Membership</span>
+                
+                <br><span class="am-product-terms">$64.95 for the first month, then
+                $49.99 for each month</span> <span class="am-product-desc">MNU
+                Membership ($50 - 100% Commission) + Affiliate Setup Fee of one
+                time $14.95</span></label>
+            </div>
+        </div>
+        
+        <h3><b>Here's what you will get Today:</b></h3><br>
+        
+        <div class="row-fluid">
+        	<div class="col-md-8"><b>Course Creation Centre</b><br>
+The MNU Course Creation Centre (CCC) is an industry first and we're damn proud of it.</div>
+        	<div class="col-md-4"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2014/11/course_creation_center_product.png"></div>
+        </div>
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>
+        
+        <div class="row-fluid">
+        	<div class="col-md-8"><b>Viral Blogging System</b><br>
+You'll receive: Unlimited Blogs, AutoResponder System, SqueezePage System, Training on How to Setup your Viral Blogging System.</div>
+        	<div class="col-md-4"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2014/11/vbp_productbox.png"></div>
+        </div>
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>
+        
+        <div class="row-fluid">
+        	<div class="col-md-8"><b>Product Housing & Advertisement</b><br>
+As a student of MNU, you’ll have the ability to have your personal products housed within our shop and be available for public purchase. </div>
+        	<div class="col-md-4"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2014/11/product_housing_product.png"></div>
+        </div>   
+        
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>        
+        
+        <div class="row-fluid">
+        	<div class="col-md-11"><b>And if that's not enough...</b><br>
+The Marketing & Networking University have integrated their own social network to allow you to interact  and connect with fellow students of MNU. Like other major social networks you have the ability to chat, message, create groups, check notifications, comment and create topics and threads inside the community forum.</div>
+        </div>      
+        
+        <br><br><br><br><br><br><br>
+        <h3><b>See what our Students say about M.N.U.</b></h3><br> 
+        
+        <div class="row-fluid well">
+"In direct sales/marketing, if you want professional income you've got to become a professional...which begins by becoming a student! There's no more thorough resource for someone who wants to become well accomplished in this industry than The Marketing and Networking University!" - Austin Zulauf
+        </div>
+        
+        <div class="row-fluid well">
+"Wow what can i say ! MNU is a well thought out and put together company. I know for a fact the founders have put in a tonne of work into this site & delivered exceptional value. Out of all the online companies i can defiantly say i'm extremely proud to be a student of MNU." - Ryan Carlson
+        </div>
+        
+        <div class="row-fluid well">
+"MNU is a powerful platform to help me help others! It's value is helping me to work on my online marketing and providing others with value." - Jack Goddard
+        </div> 
+        
+        <p align="center">
+        <h4 align="center">We Accept all Major Credit Cards</h4><img src="http://dev.entreprenets.com/account/wp-content/uploads/2014/11/all-major-credit-cards-accepted-computer-repair-jacksonhole.png"></p>
+        
+	</div>
+</div>
+<?php include $this->_script('js.country_state.js'); ?>

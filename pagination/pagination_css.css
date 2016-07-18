@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*-------------------
+* Pagination style
+*-------------------*/
+div.pagination {
+	padding: 10px;
+	margin: 3px;
+	background-color: #fff;
+}
+div.pagination a {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #AAAADD;
+	text-decoration: none; /* no underline */
+	color: #000099;
+}
+div.pagination a:hover, div.pagination a:active {
+	border: 3px solid #000099;
+	color: #000;
+}
+div.pagination span.current {
+/*	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #000099;
+						
+	font-weight: bold;
+	background-color: #000099;
+	color: #FFF;*/
+}
+div.pagination span.disabled {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #EEE;
+	color: #DDD;
+}
+
+#load{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:9999;
+}
+
+#transparent{
+	background-image:url(../images/transparent-back.jpg);
+	height:100%;
+	width:100%;
+	z-index:999;
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Course Creation</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Bootstrap 3.3.5 -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/admin.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header"> 
+    <!-- Logo --> 
+    <a href="#" class="logo"> 
+    <!-- mini logo for sidebar mini 50x50 pixels --> 
+    <span class="logo-mini"></span> 
+    <!-- logo for regular state and mobile devices --> 
+    <span class="logo-lg"><img src="dist/img/logo.png" alt="Entreprenets"></span> </a> 
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="header-list-nav">
+        <ul>
+          <li><a href="#"><img src="dist/img/Instructor.jpg" alt="Instructor"></a></li>
+        </ul>
+      </div>
+      <!-- Sidebar toggle button-->
+      
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="dist/img/web-icon.png" alt="User Image"> <span class="label label-warning">1</span></a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li> 
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li> <a href="#"> <i class="fa fa-users text-aqua"></i> 5 new members joined today </a> </li>
+                  <li> <a href="#"> <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may cause design problems </a> </li>
+                  <li> <a href="#"> <i class="fa fa-users text-red"></i> 5 new members joined </a> </li>
+                  <li> <a href="#"> <i class="fa fa-shopping-cart text-green"></i> 25 sales made </a> </li>
+                  <li> <a href="#"> <i class="fa fa-user text-red"></i> You changed your username </a> </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown messages-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="dist/img/msg-icon.png" alt="User Image"> <span class="label label-warning">10</span> </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li> 
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- start message --> 
+                    <a href="#">
+                    <div class="pull-left"> <img alt="User Image" class="img-circle" src="dist/img/user2-160x160.jpg"> </div>
+                    <h4> Support Team <small><i class="fa fa-clock-o"></i> 5 mins</small> </h4>
+                    <p>Why not buy a new awesome theme?</p>
+                    </a> </li>
+                  <!-- end message -->
+                  <li> <a href="#">
+                    <div class="pull-left"> <img alt="User Image" class="img-circle" src="dist/img/user2-160x160.jpg"> </div>
+                    <h4> AdminLTE Design Team <small><i class="fa fa-clock-o"></i> 2 hours</small> </h4>
+                    <p>Why not buy a new awesome theme?</p>
+                    </a> </li>
+                  <li> <a href="#">
+                    <div class="pull-left"> <img alt="User Image" class="img-circle" src="dist/img/user2-160x160.jpg"> </div>
+                    <h4> Developers <small><i class="fa fa-clock-o"></i> Today</small> </h4>
+                    <p>Why not buy a new awesome theme?</p>
+                    </a> </li>
+                  <li> <a href="#">
+                    <div class="pull-left"> <img alt="User Image" class="img-circle" src="dist/img/user2-160x160.jpg"> </div>
+                    <h4> Sales Department <small><i class="fa fa-clock-o"></i> Yesterday</small> </h4>
+                    <p>Why not buy a new awesome theme?</p>
+                    </a> </li>
+                  <li> <a href="#">
+                    <div class="pull-left"> <img alt="User Image" class="img-circle" src="dist/img/user2-160x160.jpg"> </div>
+                    <h4> Reviewers <small><i class="fa fa-clock-o"></i> 2 days</small> </h4>
+                    <p>Why not buy a new awesome theme?</p>
+                    </a> </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <li class="dropdown user user-menu acc-info"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="dist/img/user-img.png" alt="User Image">
+            <h2>Welcome <span>Alexandra Sturiv</span></h2>
+            <span> <img src="dist/img/drop-img.png" alt="User Image"></span></a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header"> <img alt="User Image" class="img-circle" src="dist/img/user-img.png">
+                <p> Alexander Pierce - Web Developer <small>Member since Nov. 2012</small> </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="col-xs-4 text-center"> <a href="#">Followers</a> </div>
+                <div class="col-xs-4 text-center"> <a href="#">Sales</a> </div>
+                <div class="col-xs-4 text-center"> <a href="#">Friends</a> </div>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left"> <a class="btn btn-default btn-flat" href="#">Profile</a> </div>
+                <div class="pull-right"> <a class="btn btn-default btn-flat" href="#">Sign out</a> </div>
+              </li>
+            </ul>
+          </li>
+          
+          <!-- Control Sidebar Toggle Button --> 
+          <!--<li> <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a> </li>-->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar"> 
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <ul class="sidebar-menu sidebar-menu-left">
+        <li class="treeview"><a href="#"><img src="dist/img/icon/side-menu-icon-1.png" alt="User Icon"> <span>COURSES</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a href="#">My Courses</a></li>
+            <li><a href="#">Create Course</a>
+              <ul class="treeview-menu">
+                <li><a href="#">Course Roadmap</a></li>
+                <li><a href="#">Course Feedback</a></li>
+                <li><a href="#">Automatic Messages</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#"><img src="dist/img/icon/side-menu-icon-2.png" alt="User Icon"> <span>Q&amp;A</span><i class="fa fa-angle-right pull-right"></i></a></li>
+        <li><a href="#"><img src="dist/img/icon/side-menu-icon-3.png" alt="User Icon"><span>REVIEWS</span><i class="fa fa-angle-right pull-right"></i></a></li>
+        <li><a href="#"><img src="dist/img/icon/side-menu-icon-4.png" alt="User Icon"><span>REPORTS</span><i class="fa fa-angle-right pull-right"></i></a></li>
+      </ul>
+      <button type="button" class="btn-logout btn-logout1"><img src="dist/img/logout-btn.png" alt="Logout "> </button>
+      <button type="button" class="btn-logout btn-logout2"><img src="dist/img/mini-logout.png" alt="Logout "> </button>
+    </section>
+    <!-- /.sidebar --> 
+  </aside>
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <div class="inner-nav">
+      <ul>
+        <li style="padding:0;"><a href="#" class="sidebar-toggle-left"> <img alt="User Image" src="dist/img/sidebar-collapse-left-icon.png"></a></li>
+        <li><a href="#"> <span>2</span>Dashboard</a></li>
+        <li><a href="#"> <span>1</span>COURSES</a></li>
+        <li class="active"><a href="#"> <span>2</span>COURSES CREATION</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-12">
+      <div class="title-des">
+      <div class="col-sm-12">
+        <h1>Get Early Feedback! </h1>
+        <h2>Upload Your 2-5 Minute Test Video Today!</h2>
+        <h3>Instructors who submit a test can save hours and hours of course editing time and are 70% more likely to get approved on the first try.</h3>
+        </div>
+      </div>
+      <div class="col-sm-12 padding-remove">
+        <div class="inner-sidebar">
+          <section class="sidebar page-accordian">
+          		<ul class="sidebar-menu">
+            <li class="treeview"><a href="#"><span>COURSE CONTENT</span><i class="fa fa-angle-right pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="index.html"><i class="fa fa-check icon-round" aria-hidden="true"></i> Course Goals</a></li>
+                <li><a href="curriculum.html"><i class="fa fa-check icon-round" aria-hidden="true"></i> Curriculum</a></li>
+              </ul>
+            </li>
+            <li class="treeview active"><a href="#"><span>COURSE INFO</span><i class="fa fa-angle-right pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="basic.html"><i class="fa fa-check  icon-round" aria-hidden="true"></i> Basic</a></li>
+                <li><a href="course-summary.html"><i class="fa fa-check icon-round" aria-hidden="true"></i> Course Summary</a></li>
+                <li><a href="image.html"><i class="fa fa-refresh icon-round" aria-hidden="true"></i> Image</a></li>
+                <li><a href="#"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Promo Video</a></li>
+                <li><a href="#"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Test Video</a></li>
+              </ul>
+            </li>
+            <li class="treeview"><a href="#"><span>COURSE SETTINGS</span><i class="fa fa-angle-right pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Privacy</a></li>
+                <li><a href="price-coupons.html"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Price & Coupons</a></li>
+                <li><a href="#"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Manage Instructors</a></li>
+                <li><a href="#"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Third Party Integration</a></li>
+                <li><a href="danger-zone.html"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Danger zone</a></li>
+              </ul>
+              </li>
+            <li class="treeview"><a href="#"><span>ANALYTICS</span><i class="fa fa-angle-right pull-right"></i></a>
+            	<ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Conversion</a></li>
+                <li><a href="engagement.html"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Engagement</a></li>
+              </ul>
+            </li>
+            <li class="treeview"><a href="#"><span>MORE</span><i class="fa fa-angle-right pull-right"></i></a>
+            	<ul class="treeview-menu">
+                <li><a href="getting-started-survey.html"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Getting Started Survey</a></li>
+                <li><a href="help.html"><i class="fa fa-exclamation icon-round" aria-hidden="true"></i> Help</a></li>
+              </ul>
+            	
+            </li>
+          </ul>
+          </section>
+        </div>
+        <div class="inner-center">
+          <div class="box">
+            <div class="col-sm-12">
+              <div class="goal-head">
+                <h2>Image</h2>
+              </div>
+            </div>
+            <div class="col-sm-12">                                                                                                                                                                                                                                                                                                                                                                                                   
+              <div class="goal-sec botm-border">
+              		
+               <p><img src="dist/img/image.jpg" alt="" class="align-left" width="42%"> A good course image is critical to a course’s success. It should grab the attention of the viewer and help them understand the essence of what the course has to offer.</p>
+               <p><strong>All images will be reviewed to make sure they meet the requirements for publication, please <a href="#">review the guidelines</a> before you create your image.</strong></p>
+               
+               <p>If you would like some help, we have engaged a team of professional designers who can create a custom image for you. To receive your free image, fill out this simple request form.</p>
+               
+               <div class="col-sm-12 change-img pull-left">
+               		<h2>Add / Change Image:</h2>
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <input id="uploadFile" type="text"  placeholder="GIF / JPG / JPEG / OR PNG FILE" class="col-sm-8 pull-left">
+                        <div class="file-upload col-sm-4 btn btn-primary pull-right"><span>CHOOSE AN IMAGE FILE</span>  
+<input class="upload" id="uploadBtn" type="file"></div>
+				</form>
+               </div>
+               
+               
+              </div>
+              
+                     
+              <button class="pull-right margin-top-bottom">JUMP TO NEXT &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+
+            </div>
+          </div>
+        </div>
+        <div class="inner-right-sidebar">
+        	<div class="box box-sec">
+            	<div class="col-sm-5" style="padding-left:0;"><a href="#"><img src="dist/img/alert.jpg" alt=""></a></div>
+                <div class="col-sm-7">
+                	<div class="beginner">
+                    	<i class="fa fa-circle active" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        &nbsp;
+                        Beginner
+                    </div>
+                    <h2>Best Habbit Development</h2>
+                    <div class="author-name">By : Jone Anderson</div>
+                    <select class="review-btn" style="width:85px;">
+                    	<option>Preview</option>
+                        <option>Live</option>
+                        <option>Pending</option>
+                    </select>
+                     <a href="#" class="review-btn review-btn-color">Submit For Review &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="box box-sec">
+            	<div class="col-sm-5" style="padding-left:0;"><a href="#"><img src="dist/img/photography.jpg" alt=""></a></div>
+                <div class="col-sm-7">
+                	<div class="beginner">
+                    	<i class="fa fa-circle active" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        &nbsp;
+                        Beginner
+                    </div>
+                    <h2>Best Habbit Development</h2>
+                    <div class="author-name">By : Jone Anderson</div>
+                    <select class="review-btn" style="width:85px;">
+                    	<option>Preview</option>
+                        <option>Live</option>
+                        <option>Pending</option>
+                    </select>
+                     <a href="#" class="review-btn review-btn-color">Submit For Review &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="box box-sec">
+            	<div class="col-sm-5" style="padding-left:0;"><a href="#"><img src="dist/img/laptop.jpg" alt=""></a></div>
+                <div class="col-sm-7">
+                	<div class="beginner">
+                    	<i class="fa fa-circle active" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        &nbsp;
+                        Beginner
+                    </div>
+                    <h2>Best Habbit Development</h2>
+                    <div class="author-name">By : Jone Anderson</div>
+                    <select class="review-btn" style="width:85px;">
+                    	<option>Preview</option>
+                        <option>Live</option>
+                        <option>Pending</option>
+                    </select>
+                     <a href="#" class="review-btn review-btn-color">Submit For Review &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="box box-sec">
+            	<div class="col-sm-5" style="padding-left:0;"><a href="#"><img src="dist/img/photography2.jpg" alt=""></a></div>
+                <div class="col-sm-7">
+                	<div class="beginner">
+                    	<i class="fa fa-circle active" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        &nbsp;
+                        Beginner
+                    </div>
+                    <h2>Best Habbit Development</h2>
+                    <div class="author-name">By : Jone Anderson</div>
+                    <select class="review-btn" style="width:85px;">
+                    	<option>Preview</option>
+                        <option>Live</option>
+                        <option>Pending</option>
+                    </select>
+                     <a href="#" class="review-btn review-btn-color">Submit For Review &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.content-wrapper --> 
+
+<!-- ./wrapper --> 
+
+<!-- jQuery 2.1.4 --> 
+<script src="dist/js/jQuery-2.1.4.min.js"></script> 
+<!-- jQuery UI 1.11.4 --> 
+<script>
+$(document).ready(function(){
+$('.sidebar-toggle-left').click(function() {	
+	$('body').removeClass('sidebar-collapse');
+    $('body').toggleClass('sidebar-collapse-left');
+});
+
+$('.sidebar-toggle').click(function() {	
+	$('body').removeClass('sidebar-collapse-left');
+});
+
+});
+</script> 
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> 
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip --> 
+<script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script> 
+<!-- Bootstrap 3.3.5 --> 
+<script src="bootstrap/js/bootstrap.min.js"></script> 
+
+<!-- AdminLTE App --> 
+<script src="dist/js/app.min.js"></script>
+</body>
+</html>

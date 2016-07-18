@@ -1,0 +1,161 @@
+<?php
+Am_Di::getInstance()->plugins_protect->get('wordpress')->startLayout($this, $title,true);
+get_header( 'buddypress' );
+?>
+
+<?php
+    $current_user = wp_get_current_user();
+?>
+
+<?php
+if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) :
+                    ?>
+<div id="page-sidebar">
+     <div class="scroll-sidebar"> 
+
+<div class="size-toggle">
+
+                 <a class="" id="sizeToggle"> 
+                    <i class="glyph-icon icon-navicon"></i>
+                  </a> 
+             </div>
+<div id="sidebar-menu">
+
+<?php
+if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) :
+    ?>
+<aside class="fixed skin-6">
+<div class="sidebar-inner scrollable-sidebar">
+    <div class="user-profile-sm clearfix">
+        <?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?' ':''); bp_loggedin_user_avatar( 'type=full' ); ?>
+        <div class="user-welcome">Welcome back, <a href="<?php bp_loggedin_user_link(); ?>"><?php bp_loggedin_user_fullname(); ?></a></div>
+    </div>
+
+
+<?php endif; ?>
+<div class="main-menu">
+    <ul>
+        <li class="no-menu">
+            <a href="http://dev.entreprenets.com/account/members/<? echo $current_user->user_login; ?>/dashboard/" title="Dashboard">
+                <i class="glyph-icon icon-tachometer"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="no-menu">
+            <a href="http://dev.entreprenets.com/account/quick-start" title="Quick Start">
+                <i class="glyph-icon icon-bullseye"></i>
+                <span>Quick Start</span>
+            </a>
+        </li>
+        <li class="openable">
+            <a href="#" title="Courses" class="sf-with-ul">
+                <i class="glyph-icon icon-graduation-cap"></i>
+                <span>Courses</span>
+            </a>
+            <!-- <div class="sidebar-submenu">
+ -->
+                <ul  class="submenu">
+                    <li><a href="http://dev.entreprenets.com/account/course-library" title=""><span>Course Library</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/course-creation-video-tutorials" title=""><span>Course Tutorials</span></a></li>
+                </ul>
+
+                    <!-- </div> -->
+        <li class+"no-menu">
+        <a href="http://dev.entreprenets.com/account/mnu-blogs" title="Blog Platform">
+                <i class="glyph-icon icon-pencil"></i>
+                <span>Blog Platform</span>
+            </a>
+         </li>
+        <li class+"no-menu">
+            <a href="https://email.entreprenets.com/customer" title="Autoresponder" target="_blank">
+                <i class="glyph-icon icon-envelope"></i>
+                <span>Autoresponder</span>
+            </a>
+        </li>
+        
+        <li class+"no-menu">
+            <a href="http://url.entreprenets.com" title="Click Tracker" target="_blank">
+                <i class="glyph-icon icon-upload"></i>
+                <span>Click Tracker</span>
+            </a>
+        </li>
+        
+        
+        <!-- </div> -->
+ <!--       <li class+"no-menu">
+        <a href="http://dev.entreprenets.com/account/account/member" title="Account">
+                <i class="glyph-icon icon-sitemap"></i>
+                <span>Account</span>
+            </a>
+         </li> -->
+      <li class="openable">
+            <a href="#" title="Back Office" class="sf-with-ul">
+                <i class="glyph-icon icon-sitemap"></i>
+                <span>Account</span>  
+            </a>
+         <!--    <div class="sidebar-submenu"> -->
+
+                  <ul  class="submenu">
+                    <li><a href="http://dev.entreprenets.com/account/account/member" title=""><span>Membership details</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/helpdesk" title = ""><span>Help Desk</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/aff/aff" title=""><span>Links &amp; Banners</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/aff/member/stats" title=""><span>Affiliate statistics</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/aff/member/payout" title=""><span>Commissions earnt</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/member/payment-history" title=""><span>Payment history</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/aff/member/payout-info" title=""><span>Update payout info</span></a></li>
+                    <li><a href="http://dev.entreprenets.com/account/account/aff-forced-matrix" title=""><span>Network</span></a></li>
+               <!--    <li><a href="http://dev.entreprenets.com/account/account/aff-leads" title=""><span>Leads</span></a></li> -->
+                    
+                </ul>  
+                    
+                </ul>  
+
+            <!-- </div> -->
+        </li>
+    </ul>
+    
+    
+</div>
+
+      </div>
+    </div>
+   </aside>   
+    </div>
+</div> 
+                <?php
+                else :
+                ?>
+
+                    <?php endif; ?>
+
+<style>
+.not-logged-in #page-content {
+	margin-left: 0;
+}
+</style>
+
+
+<div id="page-content-wrapper" <?php if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) : ?>
+<?php else : ?>
+<?php if(strpos($_SERVER['REQUEST_URI'],'signup') !== false) {$classs= "signuppage not-logged-in";
+echo "class=\"$classs\"";
+}?>
+<?php endif; ?>
+
+>
+    <div id="page-content">
+        <div id="buddypress">
+            <div class="padder">
+                <?php 
+				include dirname(__FILE__)."/../amember.php";
+				?>
+            </div><!-- .padder -->
+
+        </div>
+    </div>
+</div>
+
+
+        
+
+<?php get_footer( 'buddypress' ); ?>

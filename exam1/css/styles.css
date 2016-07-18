@@ -1,0 +1,84 @@
+div.wpcf7 {
+	margin: 0;
+	padding: 0;
+}
+
+div.wpcf7-response-output {
+	margin: 2em 0.5em 1em;
+	padding: 0.2em 1em;
+}
+
+div.wpcf7-mail-sent-ok {
+	border: 2px solid #398f14;
+}
+
+div.wpcf7-mail-sent-ng {
+	border: 2px solid #ff0000;
+}
+
+div.wpcf7-spam-blocked {
+	border: 2px solid #ffa500;
+}
+
+div.wpcf7-validation-errors {
+	border: 2px solid #f7e700;
+}
+
+span.wpcf7-form-control-wrap {
+	position: relative;
+}
+
+span.wpcf7-not-valid-tip {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 100;
+	background: #fff;
+	border: 1px solid #ff0000;
+	font-size: 10pt;
+	width: 280px;
+	padding: 2px;
+}
+
+span.wpcf7-not-valid-tip-no-ajax {
+	color: #f00;
+	font-size: 10pt;
+	display: block;
+}
+
+span.wpcf7-list-item {
+	margin-left: 0.5em;
+}
+
+.wpcf7-display-none {
+	display: none;
+}
+
+div.wpcf7 img.ajax-loader {
+	border: none;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+div.wpcf7 div.ajax-error {
+	display: none;
+}
+
+div.wpcf7 .placeheld {
+	color: #888;
+}
+html #video-background-1 .ui--video-background .ui--gradient {
+background-color: #0f1e2b;
+background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9z…iMTAwJSIgc3R5bGU9ImZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsiLz4NCjwvc3ZnPg==');
+background-image: -moz-linear-gradient(top, #356DA0, #0f1e2b);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#356DA0), to(#0f1e2b));
+background-image: -webkit-linear-gradient(top, #356DA0, #0f1e2b);
+background-image: -o-linear-gradient(top, #356DA0, #0f1e2b);
+background-image: linear-gradient(to bottom, #356DA0, #0f1e2b);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#356DA0', endColorstr='#0f1e2b');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#356DA0', endColorstr='#0f1e2b')";
+background-repeat: repeat-x;
+}
+html #video-background-1 .ui--video-background-content, html #video-background-1 .ui--video-background-content p, html #video-background-1 .ui--video-background-content h1, html #video-background-1 .ui--video-background-content h2, html #video-background-1 .ui--video-background-content h3, html #video-background-1 .ui--video-background-content h4, html #video-background-1 .ui--video-background-content h5, html #video-background-1 .ui--video-background-content h6 {
+color: #ffffff;
+}

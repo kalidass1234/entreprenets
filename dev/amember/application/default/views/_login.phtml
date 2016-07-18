@@ -1,0 +1,126 @@
+<style type="text/css">
+  
+
+.am-body-content > h1{
+
+display: none;
+
+}  
+
+
+.page-header{
+
+    display: none;
+}
+
+</style>
+
+
+<div class="am-layout-two-coll">
+    <div class="am-layout-two-coll-top"></div><h2 class="box-heading">
+            Login to your MNU account!
+        </h2>
+    <div class="am-coll-left">
+        <div class="am-coll-content">
+   <legend><?php __e('Login with social accounts') ?></legend>        
+ <?php echo $this->blocks('login/form/before') ?>
+
+
+ <?php echo $this->blocks('login/form/after') ?>
+
+        </div>
+    </div>
+    <div class="am-coll-right">
+
+
+    
+            <div class="am-form am-login-form">
+                <form name="login" method="post" <?php if ($form_action) echo "action='$form_action'"; ?>>
+                    <fieldset>
+                        <legend><?php __e('Login with your email or username') ?></legend>
+                        <div class="row" id="recaptcha-row" style="<?php if (empty($recaptcha)): ?>display: none;<?php endif?>" data-recaptcha-theme="<?php echo Am_Di::getInstance()->config->get('login_recaptcha_theme','red');?>">
+                            <div class="element-title" style="display:none;"></div>
+                            <div class="element am-element-recaptcha" id="recaptcha-element">
+                                <?php echo @$recaptcha ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="element">
+                                <input type="text" id="login" placeholder="Email" name="amember_login" size="15" value="<?php p(@$_REQUEST['amember_login']) ?>" autofocus="autofocus" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="element">
+                                <input type="password" id="pass" placeholder="Password" name="amember_pass" size="15" />
+                            </div>
+                        </div>
+                        <?php if (@$this_config['remember_login'] && !@$this_config['remember_auto']): ?>
+                        <div class="row">
+                            <div class="element-title">
+                                <label class="element-title" for="remember"><?php __e('Remember my password?') ?></label>
+                            </div>
+                            <div class="element">
+                                <input type="checkbox" name="remember_login" value="1"<?php if (@$_REQUEST['remember_login']): ?>checked="checked"<?php endif ?>>
+                            </div>
+                        </div>
+                        <?php endif ?>
+                        <div class="row">
+                            <div class="element">
+                                <input class="btn" type="submit" value="<?php __e('Login') ?>" />
+                            </div>
+                            <div class="frgt">
+                            <span>or</span>   <a href="" data-toggle="modal" data-target="#forgot_pass_modal"> Forgot Password</a> 
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <!-- hidden variables -->
+                    <?php echo Am_Controller::renderArrayAsInputHiddens($hidden) ?>
+                    <!-- end of hidden -->
+                </form>
+            </div>
+        <!-- Modal -->
+<div class="modal fade" id="forgot_pass_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+     <!--    <div class="am-coll-content">
+            <div class="am-form am-sendpass-form"> -->
+                <form name="sendpass" method="post" action="<?php echo REL_ROOT_URL ?>/sendpass">
+                    <fieldset>
+                        <legend><?php __e('Lost password') ?>?</legend>
+
+                        
+                            <div class="element-title">
+                                <label for="sendpass"><?php __e('Enter your E-Mail Address or Username') ?></label>
+                            </div>
+                            <div class="element"><input type="text" name="login" id="sendpass" size="15" /></div>
+                       
+                        
+                    </fieldset>
+                </form>
+
+
+        <div class="modal-footer">
+         <input class="btn" type="submit" value="<?php __e('Get Password') ?>" />
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+            </div>
+        </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<script>
+/*
+if (document.getElementById("page-sidebar")) {
+  
+} else {
+document.getElementById("page-content").style.marginLeft="0";
+ console.log("testing");
+}*/
+</script>

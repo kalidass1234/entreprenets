@@ -1,0 +1,133 @@
+<?php 
+
+if (empty($title)) $title=___('Sign-up');
+else $title=___($title);
+
+$this->setLayout('layout.phtml'); 
+include $this->_script('_error.phtml');
+
+$this->headScript()
+        ->appendFile(REL_ROOT_URL . '/application/default/views/public/js/jquery/jquery.validate.js');
+?>
+<div id="customsignup">
+<div class="row-fluid" >
+	<div class="col-md-6">
+<?php echo $this->blocks('signup/login/before') ?>
+<?php include $this->_script('signup/_login-offer.phtml'); ?>
+<?php echo $this->blocks('signup/login/after') ?>
+    
+<?php echo $this->blocks('signup/form/before') ?>
+<?php include $this->_script('_form.phtml'); ?>
+<?php echo $this->blocks('signup/form/after') ?>
+	</div>
+	</div>
+        <div class="col-md-1"></div>
+	<div class="col-md-5">
+		<div class="row-fluid">
+        <div class="col-md-8">
+	<p align="center">
+        <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png" border="0" alt="PayPal Acceptance Mark"></a></td></tr></table><!-- PayPal Logo -->
+           
+            </div>
+        </div>
+        
+        <br><br><br><br><br><br>
+        <h3><b>Here is what you will Recieve Today:</b></h3><br>
+        
+        <div class="row-fluid">
+        <div class="col-md-2"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2015/05/tick-e1432278667117.png"></div>
+        	<div class="col-md-9"><b>Course Creation Centre</b><br>
+The MNU Course Creation Centre (CCC) is an industry first. You willl be able to create and sell your own courses, take courses and monitor all course analytics
+        <br>
+        <p style="color:red">(Priceless).</p>
+        </div>
+        <br>
+         	
+        </div>
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>
+        
+        <div class="row-fluid">
+                <div class="col-md-2"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2015/05/tick-e1432278667117.png"></div>
+        	<div class="col-md-9"><b>Web Hosting Platform</b><br>
+        	 MNU webhosting platform is super powerful. You can create unlimited sites, have access to over 70 Premium themes, MNU Page Builder, opt-in plugins and many
+        	 more features. Included is webhosting at a ($25/month value)
+        	  <br>
+                  <p style="color:red">(Overall Value $5000+).</p>
+                  </div>
+                  <br> 
+        	            
+        	
+        </div>
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>
+        
+        <div class="row-fluid">
+                <div class="col-md-2"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2015/05/tick-e1432278667117.png"></div>
+        	<div class="col-md-9"><b>Autoresponder</b><br>
+                We recognise the importance of email marketing and list building when marketing online, so we decided to offer this service to all our members. Up to 10,000 subscribers, Unlimited Emails, Unlimited Lists and many more features and        
+                upgrades on the inside.
+                 <br>
+                 <p style="color:red">(Overall Value $40/month).</p>
+                 </div>
+                 <br> 
+                 
+         </div>
+        
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>
+        
+        <div class="row-fluid">
+                <div class="col-md-2"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2015/05/tick-e1432278667117.png"></div>
+        	<div class="col-md-9"><b>Click Tracking</b><br>
+The MNU click tracking allows you to shorten your urls while at the same time track and calculate all your clicks, provide heats maps and geopgraphical locations. You can bundle your urls, implement redirects, create splash pages and much more.
+                 <p style="color:red">(Overall Value $30/month).</p>
+                 </div>
+                 <br> 
+        
+        	
+        	
+        </div>
+        
+        <p></p>
+        <p></p>
+        <br><p><hr></p><br>
+        
+        <div class="row-fluid">
+                <div class="col-md-2"><img src="http://dev.entreprenets.com/account/wp-content/uploads/2015/05/tick-e1432278667117.png"></div>
+        	<div class="col-md-9"><b>CRM System</b><br>
+Start to manage your business more professionally with our CRM system. Mark your Calender for important events, create tasks, manage your accounts and much more
+                 <p style="color:red">(Overall Value $20/month).</p>
+                 </div>
+                 <br>  
+        
+        	
+        </div>    
+        
+        <p></p>
+        <p></p>
+        <br><br><br><br><br>
+        <h3><b>See what our members say about M.N.U.</b></h3><br> 
+        
+        <div class="row-fluid well">
+        <iframe src="https://player.vimeo.com/video/120941012" width="480" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <br>
+        <br>
+"In direct sales/marketing, if you want professional income you've got to become a professional...which begins by becoming a student! There's no more thorough resource for someone who wants to become well accomplished in this industry than The Marketing and Networking University!" - Austin Zulauf
+        </div>
+        
+<!--        <div class="row-fluid well">
+        <iframe src="https://player.vimeo.com/video/117040285" width="480" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <br>
+        <br>
+"In past companies i have spent hundreds of dollars a month on tools alone. At the Marketing and Networking University i get all the tools i will ever need for a low monthly cost of $50 to build any business.." - Frederick Mandl
+        </div> -->
+        
+         <p align="center">
+         <img src="http://dev.entreprenets.com/account/wp-content/uploads/2015/05/money-back-guarantee.png"></p>
+</div>
+</div>
+<?php include $this->_script('js.country_state.js'); ?>

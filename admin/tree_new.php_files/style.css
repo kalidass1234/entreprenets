@@ -1,0 +1,35 @@
+body {
+
+margin:0px; 
+FONT-FAMILY: Verdana, Tahoma, Arial;
+FONT-SIZE: 8pt; 
+FONT-WEIGHT: normal;
+color:white;
+
+}
+
+table.stylish
+ {
+                                     border:#827354 1px solid;
+ }
+ 
+
+TD{
+	 COLOR: white; 
+     FONT-FAMILY: Verdana, Tahoma, Arial; 
+	 FONT-SIZE: 7.5pt; FONT-WEIGHT: bold
+
+  }
+  
+TD.pad{
+	 COLOR: WHITE;
+	 padding:4px;  
+     FONT-FAMILY: Verdana, Tahoma, Arial; 
+	 FONT-SIZE: 8pt; 
+	 
+  }
+
+TD.extpad{
+	 COLOR: WHITE;
+	 padding:4px;  
+     FONT-FAM
