@@ -176,7 +176,7 @@ data-linktoslide="next"
 			data-start="1400"
 			data-easing="easeOutExpo"
 			data-endspeed="300"
-			style="z-index: 4"><a class="btn btn-large btn-icon-right with-icon button-hover btn-green radius-30px ui--animation" href="#" style="">Join Us <strong>Now!</strong><span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-caret-right"></i></span></a> 
+			style="z-index: 4"><a class="btn btn-large btn-icon-right with-icon button-hover btn-green radius-30px ui--animation" href="login.php" style="">Join Us <strong>Now!</strong><span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-caret-right"></i></span></a> 
 		</div>
 
 
