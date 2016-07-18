@@ -4315,5 +4315,44 @@ function _Add_Slider()
 		header("Location:admin_main.php?page_number=203&update=1&msg=".$msg);
 	} 
 
+        function _Add_manage_homepage(){
+            
+		
+		$table_name=TABLE_PREFIX.'manage_homepage';
+		$flag=false;
+		//print_r($_POST);
+		$cur_date=date('Y-m-d');
+		foreach($_POST as $key=>$val)
+		{
+			//print_r($key);
 
+			if($key=='id')
+			{
+				$flag=true;
+				$where="id='$val'";
+			}
+			else
+			{
+				$update_arr[$key]=mysql_real_escape_string($val);
+			}
+		}
+		if($flag)
+		{
+			
+                    
+                    $this->mysql_func->update_tbl($update_arr,$table_name,$where);
+                    $msg="Record has been updated successfully.";
+		}
+		else
+		{
+				//print_r($update_arr);
+				$this->mysql_func->insert_tbl($update_arr,$table_name);
+				$msg="Record has been inserted successfully.";
+
+		}
+		// upload image of the product with proper validation
+		// check image is already available or not
+		
+		header("Location:admin_main.php?page_number=209&update=1&msg=".$msg);
+        }
 }

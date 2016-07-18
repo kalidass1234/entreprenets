@@ -240,6 +240,9 @@ if(isset($_POST['action']))
 		case "add_tut":
 		$obj_rep->_Add_Tut();
 		break;
+		case "add_manage_homepage":
+		$obj_rep->_Add_manage_homepage();
+		break;
 	}
 }
 ?>

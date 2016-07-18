@@ -531,7 +531,11 @@ data-linktoslide="next"
       <style>.full-org-box{ background:#ff3300; margin-bottom:20px; margin-top:0;}
 .wht-box{ background:#fff; margin:0px 30px 30px 30px;}
 </style>
-
+<?php
+$mhpsection = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='1'"));
+if(!empty($mhpsection))
+{
+?>
       <div id="page-content" class="no-sidebar-layout full-org-box">
       <div class="wht-box">
       <div class="container"><div id="the-content">
@@ -539,27 +543,18 @@ data-linktoslide="next"
  <div class="ui-column span12">
  
  
-<h2 class="ui--animation " style="text-align: center; color: #ff5c1c !important; margin-bottom: 6px; "><strong>Welcome to BMC Network</strong></h2><h4 class="ui--animation " style="text-align: center; ">Living a life worth living, is living a fufilled life.</h4>
+<h2 class="ui--animation " style="text-align: center; color: #ff5c1c !important; margin-bottom: 6px; "><strong><?=$mhpsection['title']?></strong></h2><h4 class="ui--animation " style="text-align: center; "><?=$mhpsection['sub_title']?></h4>
 
 <hr>
 
- <div class="ui-column span5 pull-right"><div class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}"></div><div class="ui--video-wrapper clearfix"><div class="ui--video ui--video-16-9" style="padding-bottom: 56.25%;"><iframe src="//player.vimeo.com/video/66297975?wmode=transparent&amp;fullscreen=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=0e7bdd&" width="960" height="540" frameborder="0" title="Etta Bond: Under The Knife (Channel 4, Random Acts)" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+ <div class="ui-column span5 pull-right"><div class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}"></div><div class="ui--video-wrapper clearfix"><div class="ui--video ui--video-16-9" style="padding-bottom: 56.25%;"><iframe src="<?=$mhpsection['video_url']?>?wmode=transparent&amp;fullscreen=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=0e7bdd&" width="960" height="540" frameborder="0" title="Etta Bond: Under The Knife (Channel 4, Random Acts)" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
 			<div class="ui--shadow ui--shadow-type-8  clearfix">
 				<img src="images/shadow-8.png" alt="">
 			</div>
 		</div></div>
 
-<p>How you have become as a person, how in your own little way have a significant impact to others, and left a legacy to others that will make their life better. Our brains tend to believe that the next big accomplishment or break is going to be the one that sets us for life i.e. winning the lottery, or a good profitable business.</p>
-
-<p class="text-center"><em>How many people have to live their entire lives before they realize there was never going to be perfection? Quite a few.</em></p>
-
-<p>Don't get us wrong – life can be VERY good and you can be VERY pleased, happy, excited, enthralled, and enchanted with it.
-But you'll never be completely satisfied until you decide to be.</p>
-
-<p>Have you ever Imagine how interesting it could be to own your own business and not working for someone else? or wonder how you could establish your own business considering the fact that having a capital base has always been the big obstacle, well here at BMC Network we specialize in getting people like you well establish in an online business of your choice. You choose your desired online business we train you from a total novice to a pro, we give you an opportunity to raise your own capital base through our social Matrix Circles and fully develop your dream business from the ground up while taking it to the market for you with all expenses being taken care off.</p>
-
-<p>With our simple Matrix circle network you can easily make huge money even before you start running your online business that we will design and develop for you. It is a clear fact that no matter how beautiful and intelligent your business idea is, without you being able to sell the business then that business is a total failure, this is the reason why we introduce a system attached to your business training whereby you introduce other people to join the system like you did and by doing that contineously you will be acquiring the very first important skill set you need for your business journey. We dont want you to stay longer before you start running your online business in order not to get distracted from the main aim, but just to get that marketing efficiency, expertise and courage so that you will be able to do or sell anything, this is to your advantage. You only have to refer 3 people 24 times and help these 3 people each to bring their own 3 and you are ready to launch your online business with all the expenses on us. It's as simple as that. So, what are you waiting for? Click on the various packages and choose the one that is right for you to get started if you require any assistance in selecting the right package, you can chat with our business development professionals they will help you make a better choice. Good Luck </p> 
+<?=$mhpsection['description']?>
  </div> 
 
   
@@ -569,7 +564,9 @@ But you'll never be completely satisfied until you decide to be.</p>
 </div>
 </div>
 </div>
-
+<?php
+}
+?>
 <div id="page-content" class="no-sidebar-layout">
 <div class="container"><div id="the-content">
 
