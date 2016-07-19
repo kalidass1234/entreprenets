@@ -92,61 +92,9 @@ $cur_date=date('Y-m-d');
 		  
 	}
 	</script>
-              <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
-          	  <input type="hidden" name="action" value="add_projects" />
-         	  <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Add Featured Online Business (All Projects)</h4>
-                  </div>
-                  
-                  <div class="modal-body">
-                  	    <div class="form-group">
-                           <label for="name">Title</label>
-                           <input class="form-control for-height" type="text" id="title" name="title" value="" />
-                           <!--<input type="hidden" id="added_date" name="added_date" value="<?=$cur_date;?>" />-->
-                        </div>
-                  	    <div class="form-group">
-                           <label for="name">Image</label>
-                           <input class="form-control for-height" type="file" id="image" name="image" />
-                        </div>
-
-                  	    <div class="form-group">
-                           <label for="name">Display Status - </label>
-                           <input type="radio" id="display_status2" name="display_status" value="1" checked/>Yes
-                           <input type="radio" id="display_status1" name="display_status" value="0" />No
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name">Content</label>
-                          <textarea class="form-control for-height" rows="3" id="editor21" name="project_desc" placeholder="Textarea"><?php echo $project_desc;?></textarea>
-                          <script type="text/javascript">
-                             // Replace the <textarea id="editor1"> with a CKEditor
-                            // instance, using default configuration.
-                            CKEDITOR.replace( 'editor21',
-                             {
-                                  filebrowserBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html',
-                                  filebrowserImageBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Images',
-                                  filebrowserFlashBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Flash',
-                                  filebrowserUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                                  filebrowserImageUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                  filebrowserFlashUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                  filebrowserWindowWidth : '1000',
-                                  filebrowserWindowHeight : '700'
-                             });
-                             </script>
-                        </div>
-
-                   </div>
-                    
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger" onclick="return binarypos();">Submit</button>
-                  </div>
-                </div>
-              </div>
-              </form>
+               
+            </div>
+              
             </div>
         </div>
          
