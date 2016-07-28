@@ -35,7 +35,7 @@ if($_POST['action']=='showmaterialform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Banner Add</h4>
                   </div>
                   <div class="modal-body">
@@ -114,7 +114,7 @@ if($_POST['action']=='showfaqform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add FAQ</h4>
                   </div>
                   <div class="modal-body">
@@ -165,7 +165,7 @@ if($_POST['action']=='showcmsform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -238,7 +238,7 @@ if($_POST['action']=='showcmsbackooficeform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -333,7 +333,7 @@ if($_POST['action']=='showcmssevenform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -483,7 +483,7 @@ if($_POST['action']=='showcmshometopform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -558,7 +558,7 @@ if($_POST['action']=='showcmshomefooterform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -632,7 +632,7 @@ if($_POST['action']=='showcmslatestworkform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -688,7 +688,7 @@ if($_POST['action']=='showcmshomeform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -746,7 +746,7 @@ if($_POST['action']=='showcmsclientsayform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -802,7 +802,7 @@ if($_POST['action']=='showcmsrecentpostform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS</h4>
                   </div>
                   <div class="modal-body">
@@ -857,7 +857,7 @@ if($_POST['action']=='showeventform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Announcement</h4>
                   </div>
                   <div class="modal-body">
@@ -909,7 +909,7 @@ if($_POST['action']=='showmemberremarkform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add Member Remark</h4>
                   </div>
                   <div class="modal-body">
@@ -957,7 +957,7 @@ if($_POST['action']=='showhomeregtandcform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add Registration Term And Condition</h4>
                   </div>
                   <div class="modal-body">
@@ -1005,7 +1005,7 @@ if($_POST['action']=='showhomecompansationform')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Add CMS Compansation</h4>
                   </div>
                   <div class="modal-body">
@@ -1651,6 +1651,179 @@ if($_POST['action']=='special_product')
 	echo "Update Successfully";
 	}
 }
+if($_POST['action']=='showeeditpackagefeature')
+{
+	//echo "<pre>"; print_r($_POST);
+	$m_id=$_POST['m_id'];
+	$res=$obj_query->query("*","package_feature","id='$m_id'");   
+	$row=$obj_query->get_all_row($res);
+	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
+	$resP=$obj_query->query("*","package_CMS_table","package_id='$m_id'");   
+	$rowP=$obj_query->get_all_row($resP);
+        ?>
+    
+    <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
+          	  <input type="hidden" name="action" value="add_packages_feature" />
+         	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Package Feature</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                          <label for="name">Package Name</label>
+                          <input class="form-control for-height" type="text" name="name" id="name" value="<?=$row['name']?>" required  />
+                      </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Input Type</label>
+                          <input type="radio" id="input_type" name="input_type" value="1" <?php if($row['input_type'] == 1){?> checked <?php } ?>/>Radio Box
+                           <input type="radio" id="input_type" name="input_type" value="2" <?php if($row['input_type'] == 2){?> checked <?php } ?> />Input Box
+                       </div>
+                   </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <?php }
+if($_POST['action']=='showeeditpackagetab')
+{
+	//echo "<pre>"; print_r($_POST);
+	$m_id=$_POST['m_id'];
+	$res=$obj_query->query("*","package_CMS_tab","id='$m_id'");   
+	$row=$obj_query->get_all_row($res);
+	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
+	?>
+    
+    <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
+          	  <input type="hidden" name="action" value="add_packages_tab" />
+         	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Package Tab</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                          <label for="name">Tab Title</label>
+                          <input class="form-control for-height" type="text" name="title" id="name" value="<?=$row['title']?>" required  />
+                      </div>
+                      <div class="form-group">
+                          <label for="name">Tab Subtitle Name</label>
+                          <input class="form-control for-height" type="text" name="subtitle" id="name" value="<?=$row['subtitle']?>" required  />
+                      </div>
+                       
+                       
+                   </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <?php }
+if($_POST['action']=='showeeditpackagetabcontent')
+{
+	//echo "<pre>"; print_r($_POST);
+	$m_id=$_POST['m_id'];
+	$res=$obj_query->query("*","package_CMS_tab_content","id='$m_id'");   
+	$row=$obj_query->get_all_row($res);
+	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
+	?>
+    
+    <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
+          	  <input type="hidden" name="action" value="add_packages_tab_content" />
+         	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
+         	  <input type="hidden" name="tab_id" id="material_id" value="<?php echo $row['tab_id'];?>" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Package Tab Content</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                          <label for="name">Key</label>
+                          <input class="form-control for-height" type="text" name="question" id="name" value="<?=$row['question']?>" required  />
+                      </div>
+                      <div class="form-group">
+                          <label for="name">Value</label>
+                          <input class="form-control for-height" type="text" name="value" id="name" value="<?=$row['value']?>" required  />
+                      </div>
+                       
+                       
+                   </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <?php }
+if($_POST['action']=='showeeditprojecttabcontent')
+{
+	//echo "<pre>"; print_r($_POST);
+	$m_id=$_POST['m_id'];
+	$res=$obj_query->query("*","manage_projects_tab_content","id='$m_id'");   
+	$row=$obj_query->get_all_row($res);
+	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
+	?>
+    
+    <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
+          	  <input type="hidden" name="action" value="add_project_tab_content" />
+         	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
+         	  <input type="hidden" name="project_id" id="material_id" value="<?php echo $_POST['project_id'];?>" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Project Tab Content</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                           <label for="name">Tab Category</label>
+                           <select name="tab_id">
+                               <?php
+                               $catq=$obj_query->query("*","manage_projects_tab_category","display_status=1");
+				while($cat=$obj_query->get_all_row($catq))
+				{
+                                    $selected = '';
+                                    if($row['tab_id']==$cat['id']){
+                                        $selected = 'selected';
+                                    }
+                                    echo '<option '.$selected.' value="'.$cat['id'].'">'.$cat['name'].'</option>';
+                                }
+                                ?>
+                           </select>
+                       </div>
+                      <div class="form-group">
+                          <label for="name">Title</label>
+                          <input class="form-control for-height" type="text" name="name" id="name" value="<?=$row['name']?>" required  />
+                      </div>
+                      <div class="form-group">
+                          <label for="name">Description</label>
+                          <textarea class="form-control for-height" name="description" rows="5" required><?=$row['description']?></textarea>
+                      </div>
+                       <div class="form-group">
+                           <label for="name">Image</label>
+                           <input class="form-control for-height" type="file" accept="image/*" id="image" name="image" value="" />
+                        </div>
+                       <div class="form-group">
+                           <img src="project_tab/<?=$row['image'];?>" height="100" width="100"/>
+                        </div>
+                   </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <?php }
 if($_POST['action']=='showeeditpackage')
 {
 	//echo "<pre>"; print_r($_POST);
@@ -1709,7 +1882,7 @@ if($_POST['action']=='showeeditpackage')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Package</h4>
                   </div>
                   <div class="modal-body">
@@ -1734,29 +1907,37 @@ if($_POST['action']=='showeeditpackage')
                           <label for="name">Second Level Commission(%)</label>
                           <input class="form-control for-height" type="text" name="second_level_comm" id="second_level_comm" value="<?=$row['second_level_comm']?>"/>
                        </div>
+                       <div class="form-group">
+                          <label for="name"><strong>CMS Content Future</strong></label>
+                       </div>
+                        <?php
+                        $keyvQ=$obj_query->query_execute("select * from package_feature");
+                        $ff=0;
+                        while($keyv=$obj_query->get_all_row($keyvQ)){
+                            $CMSQ=$obj_query->query_execute("select * from package_CMS_table WHERE package_id='".$row['package_id']."' AND feature_id='".$keyv['id']."'");
+                            $cmsData=$obj_query->get_all_row($CMSQ);
+                        ?>
+                        <div class="form-group">
+                            <label for="name"><?=$keyv['name'].':'?></label><br>
+                            <?php
+                            if($keyv['input_type']==1)
+                            {
+                            ?>
+                           <input type="radio" id="cms_col_<?=$keyv['id']?>" name="cms[<?=$keyv['id']?>]" value="1" <?php if($cmsData['value'] == 1){?> checked <?php } ?>/>Yes
+                            <input type="radio" id="cms_col_<?=$keyv['id']?>" name="cms[<?=$keyv['id']?>]" value="0" <?php if($cmsData['value'] == 0){?> checked <?php } ?> />No
+                            <?php
+                            } else {
+                            ?>
+                            <input class="form-control for-height" type="text" name="cms[<?=$keyv['id']?>]" id="cms_col_<?=$keyv['id']?>" value="<?=$cmsData['value'];?>"/>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <?php
+                        }
+                        ?>
+                       
                    </div>
-                    <div class="form-group">
-                      <label for="name">Content</label>
-                      <textarea class="form-control for-height" rows="3" id="editor2"  name="package_desc"  placeholder="Textarea"><?=$row['package_desc']?></textarea>
-                      <script type="text/javascript">
-                         // Replace the <textarea id="editor1"> with a CKEditor
-                        // instance, using default configuration.
-                        CKEDITOR.replace( 'editor2',
-                         {
-                              filebrowserBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html',
-                              filebrowserImageBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Images',
-                              filebrowserFlashBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Flash',
-                              filebrowserUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                              filebrowserImageUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                              filebrowserFlashUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                              filebrowserWindowWidth : '1000',
-                              filebrowserWindowHeight : '700'
-                         });
-                         </script>
-                    </div>
-
-
-                  </div>
                   <div class="modal-footer">
                     <button type="submit" class="btn btn-danger">Submit</button>
                   </div>
@@ -1824,7 +2005,7 @@ if($_POST['action']=='showeeditpage')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Page</h4>
                   </div>
  
@@ -1956,7 +2137,7 @@ if($_POST['action']=='showeeditsubpage')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page[<?=$getInfoByTableNameAndID['page_name'];?>]</h4>
                   </div>
                   <div class="modal-body">
@@ -2079,7 +2260,7 @@ if($_POST['action']=='showeeditnews')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit News Page</h4>
                   </div>
 
@@ -2219,7 +2400,7 @@ if($_POST['action']=='showeeditsteps')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page</h4>
                   </div>
 
@@ -2327,7 +2508,7 @@ if($_POST['action']=='showeeditteam')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page</h4>
                   </div>
 
@@ -2442,7 +2623,7 @@ if($_POST['action']=='showeeditpartner')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page</h4>
                   </div>
 
@@ -2537,7 +2718,7 @@ if($_POST['action']=='showeeditfeatures')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page</h4>
                   </div>
 
@@ -2644,7 +2825,7 @@ if($_POST['action']=='showeeditprogram')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page</h4>
                   </div>
 
@@ -2690,7 +2871,90 @@ if($_POST['action']=='showeeditprogram')
               </form>
 <?php } ?>
 
+<?php
+if($_POST['action']=='showeeditprojectscategory')
+{
+	//echo "<pre>"; print_r($_POST);
+	$page_id = $_POST['page_id'];
+	$m_id=$_POST['m_id'];
+	$res=$obj_query->query("*","manage_projects_category","id='$m_id'");   
+	$row=$obj_query->get_all_row($res);
+	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
+	$cond = " id='".$page_id."'";
+	?>
 
+    <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
+          	  <input type="hidden" name="action" value="add_projects_category" />
+         	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Category Page</h4>
+                  </div>
+
+                  <div class="modal-body">
+                  	    <div class="form-group">
+                           <label for="name">Name</label>
+                           <input class="form-control for-height" type="text" id="title" name="name" value="<?=$row['name']?>" />
+                        </div>
+
+                  	    <div class="form-group">
+                           <label for="name">Display Status - </label>
+                           <input type="radio" id="news_status2" name="display_status" value="1" <?php if($row['display_status'] == 1){?> checked <?php } ?>/>Yes
+                           <input type="radio" id="news_status1" name="display_status" value="0" <?php if($row['display_status'] == 0){?> checked <?php } ?> />No
+                        </div>
+                        
+                   </div>
+				  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" >Submit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+<?php } ?>
+<?php
+if($_POST['action']=='showeeditprojectstabcategory')
+{
+	//echo "<pre>"; print_r($_POST);
+	$page_id = $_POST['page_id'];
+	$m_id=$_POST['m_id'];
+	$res=$obj_query->query("*","manage_projects_tab_category","id='$m_id'");   
+	$row=$obj_query->get_all_row($res);
+	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
+	$cond = " id='".$page_id."'";
+	?>
+
+    <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
+          	  <input type="hidden" name="action" value="add_projects_tab_category" />
+         	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Tab Category Page</h4>
+                  </div>
+
+                  <div class="modal-body">
+                  	    <div class="form-group">
+                           <label for="name">Name</label>
+                           <input class="form-control for-height" type="text" id="title" name="name" value="<?=$row['name']?>" />
+                        </div>
+
+                  	    <div class="form-group">
+                           <label for="name">Display Status - </label>
+                           <input type="radio" id="news_status2" name="display_status" value="1" <?php if($row['display_status'] == 1){?> checked <?php } ?>/>Yes
+                           <input type="radio" id="news_status1" name="display_status" value="0" <?php if($row['display_status'] == 0){?> checked <?php } ?> />No
+                        </div>
+                        
+                   </div>
+				  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" >Submit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+<?php } ?>        
 <?php
 if($_POST['action']=='showeeditprojects')
 {
@@ -2702,81 +2966,73 @@ if($_POST['action']=='showeeditprojects')
 	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
 	$cond = " id='".$page_id."'";
 	?>
-    <script>
-	function total_prices()
-	{
-		var other_charges = 0;
-		var price = document.getElementById("price").value;
-		
-		var other_charges = document.getElementById("other_charges").value;
-		var total_pricess = parseInt(price) + parseInt(other_charges);
-		document.getElementById("total_price").value = total_pricess;
-	}
-	function total_subs_commission()
-	{
-		var price = document.getElementById("price").value;
-		var subs_commissions = document.getElementById("subs_commission").value;
-		
-		var fsvar = price * subs_commissions/100;
-		document.getElementById("subs").innerHTML = fsvar;
-	}
-	
-	function binarypos()
-	{
-		var binary_type1 = document.getElementById("binary_type1").value;
-		var binary_type2 = document.getElementById("binary_type2").value;
-		
-		if(binary_type1 >2 || binary_type2>2)
-		{
-			alert("1:2, 2:1, 1:1 binary types are allowed only.");	
-			document.getElementById("binary_type1").focus();
-			return false;
-		}
-		if(binary_type1 <=0 || binary_type2<=0)
-		{
-			alert("1:2, 2:1, 1:1 binary types are allowed only.");	
-			document.getElementById("binary_type1").focus();
-			return false;
-		}
-		if(binary_type1 >=2 & binary_type2>=2)
-		{
-			alert("1:2, 2:1, 1:1 binary types are allowed only.");	
-			document.getElementById("binary_type1").focus();
-			return false;
-		}
-	}
-	</script>
+    
     <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
           	  <input type="hidden" name="action" value="add_projects" />
          	  <input type="hidden" name="id" id="material_id" value="<?php echo $row['id'];?>" />
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Project Page</h4>
                   </div>
 
                   <div class="modal-body">
+                        <div class="form-group">
+                           <label for="name">Project Type</label>
+                           <select name="project_type">
+                               <option value="1" <?=$row['project_type']==1 ? 'selected' : ''?>>Offline Business</option>
+                               <option value="2" <?=$row['project_type']==2 ? 'selected' : ''?>>Online Business</option>
+                               <option value="3" <?=$row['project_type']==3 ? 'selected' : ''?>>Feature Online Business</option>
+                               <option value="4" <?=$row['project_type']==4 ? 'selected' : ''?>>Hot eBusinesses</option>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                           <label for="name">Project Category</label>
+                           <select name="category_id">
+                               <?php
+                               $catq=$obj_query->query("*","manage_projects_category","display_status=1");
+				while($cat=$obj_query->get_all_row($catq))
+				{
+                                    $selected = $row['category_id']==$cat['id'] ? 'selected' : '';
+                                    echo '<option value="'.$cat['id'].'" '.$selected.'>'.$cat['name'].'</option>';
+                                }
+                                ?>
+                           </select>
+                        </div>
                   	    <div class="form-group">
                            <label for="name">Title</label>
                            <input class="form-control for-height" type="text" id="title" name="title" value="<?=$row['title']?>" />
                         </div>
                   	    <div class="form-group">
                            <label for="name">Image</label>
-                           <input class="form-control for-height" type="file" id="image" name="image" value="" />
+                           <input class="form-control for-height" type="file" id="image" name="image[]" value="" multiple=""/>
+                           You can select multiple image.
                         </div>
                         <div class="form-group">
-                           <img src="project_image/<?=$row['image']?>" width="100" height="100">
+                            <?php
+                               $imgq=$obj_query->query("*","manage_projects_images","project_id=".$row['id']);
+				while($img=$obj_query->get_all_row($imgq))
+				{
+                                 ?>
+                            <img src="project_image/<?=$img['image']?>" width="100" height="100" style="margin-right: 2px;">
+                                 <?php
+                                }
+                                ?>
                         </div>
-
-                  	    <div class="form-group">
-                           <label for="name">Display Status - </label>
-                           <input type="radio" id="news_status2" name="display_status" value="1" <?php if($row['display_status'] == 1){?> checked <?php } ?>/>Yes
-                           <input type="radio" id="news_status1" name="display_status" value="0" <?php if($row['display_status'] == 0){?> checked <?php } ?> />No
+                        <div class="form-group">
+                           <label for="name">Youtube Video Id</label>
+                           <input class="form-control for-height" type="text" id="youtube_id" name="youtube_id" value="<?=$row['youtube_id']?>" />
+                           Only enter youtube video id. Example: A3PDXmYoF5U
                         </div>
+                        <div class="form-group">
+                           <label for="name">Short Description</label>
+                           <textarea class="form-control for-height" rows="3" name="short_desc" placeholder="Enter short description"><?=$row['short_desc']?></textarea>
+                        </div>
+                  	    
                         
                         <div class="form-group">
-                          <label for="name">Content</label>
+                          <label for="name">Description</label>
                           <textarea class="form-control for-height" rows="3" id="editor21" name="project_desc" placeholder="Textarea"><?=$row['project_desc']?></textarea>
                           <script type="text/javascript">
                              // Replace the <textarea id="editor1"> with a CKEditor
@@ -2794,7 +3050,11 @@ if($_POST['action']=='showeeditprojects')
                              });
                              </script>
                         </div>
-
+                        <div class="form-group">
+                           <label for="name">Display Status - </label>
+                           <input type="radio" id="news_status2" name="display_status" value="1" <?php if($row['display_status'] == 1){?> checked <?php } ?>/>Yes
+                           <input type="radio" id="news_status1" name="display_status" value="0" <?php if($row['display_status'] == 0){?> checked <?php } ?> />No
+                        </div>
                    </div>
 
                   <div class="modal-footer">
@@ -2866,12 +3126,12 @@ if($_POST['action']=='showeeditslider')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Slider Page</h4>
                   </div>
 
                   <div class="modal-body">
-                  	    <div class="form-group">
+<!--                  	    <div class="form-group">
                            <label for="name">First Line</label>
                            <input class="form-control for-height" type="text" id="first_title" name="first_title" value="<?=$row['first_title']?>" />
                         </div>
@@ -2886,7 +3146,7 @@ if($_POST['action']=='showeeditslider')
                   	    <div class="form-group">
                            <label for="name">Link</label>
                            <input class="form-control for-height" type="text" id="slider_link" name="slider_link" value="<?=$row['slider_link']?>" />
-                        </div>
+                        </div>-->
                   	    <div class="form-group">
                            <label for="name">Image</label>
                            <input class="form-control for-height" type="file" id="image" name="image" value="" />
@@ -2932,7 +3192,7 @@ if($_POST['action']=='showeeditcatb')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Category Page</h4>
                   </div>
 
@@ -3019,7 +3279,7 @@ if($_POST['action']=='showeeditcat')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Category Page</h4>
                   </div>
 
@@ -3126,7 +3386,7 @@ if($_POST['action']=='showeedittestimonial')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Sub Page</h4>
                   </div>
 
@@ -3242,7 +3502,7 @@ if($_POST['action']=='showeedithowit')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Page</h4>
                   </div>
  
@@ -3272,39 +3532,52 @@ if($_POST['action']=='showeedithowit')
                              });
                              </script>
                         </div>
-
+                        <?php
+                        $i=0;
+                        $secQ = mysql_query("SELECT * FROM manage_how_it_other_content WHERE main_id='".$row['id']."'");
+                        while($res = mysql_fetch_assoc($secQ)){
+                        $i++;    
+                        ?>
+                        <div class="form-group">
+                           <label for="name">Section <?=$i?></label>
+                        </div>
+                        <div class="form-group">
+                           <label for="name">Name</label>
+                           <input class="form-control for-height" type="text" id="" name="content[<?=$res['id']?>][name]" value="<?=$res['name']?>" />
+                        </div>
+                        <div class="form-group">
+                           <label for="name">Description</label>
+                           <textarea class="form-control for-height" id="description" name="content[<?=$res['id']?>][description]" ><?=$res['description']?></textarea>
+                        </div>
+                        <div class="form-group">
+                           <label for="name">URL</label>
+                           <input class="form-control for-height" type="text" id="url" name="content[<?=$res['id']?>][url]" value="<?=$res['url']?>" placeholder="Read More(Ridirect) URL"/>
+                        </div>
+                        <?php
+                        if($res['main_id']==1){
+                        ?>
+                        <div class="form-group">
+                           <label for="name">Image</label>
+                           <input class="form-control for-height" type="file" id="image" name="image[<?=$res['id']?>]" />
+                        </div>
+                        <?php
+                        if(!empty($res['image'])){
+                        ?>
+                        <div class="form-group">
+                            <img src="howitwork_image/<?=$res['image']?>" width="100" height="100" />
+                        </div>
+                        <?php    
+                        }
+                        }
+                        }
+                        ?>
                         <div class="form-group">
                            <label for="name">Display Status - </label>
                            <input type="radio" id="news_status2" name="display_status" value="1" <?php if($row['display_status'] == 1){?> checked <?php } ?>/>Yes
                            <input type="radio" id="news_status1" name="display_status" value="0" <?php if($row['display_status'] == 0){?> checked <?php } ?> />No
                         </div>
-                        
-                        <div class="form-group">
-                          <label for="name">Third Content</label>
-                          <textarea class="form-control for-height" rows="3" id="editor21" name="third_desc" placeholder="Textarea"><?php echo $row['third_desc'];?></textarea>
-                          <script type="text/javascript">
-                             // Replace the <textarea id="editor1"> with a CKEditor
-                            // instance, using default configuration.
-                            CKEDITOR.replace( 'editor21',
-                             {
-                                  filebrowserBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html',
-                                  filebrowserImageBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Images',
-                                  filebrowserFlashBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Flash',
-                                  filebrowserUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                                  filebrowserImageUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                  filebrowserFlashUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                  filebrowserWindowWidth : '1000',
-                                  filebrowserWindowHeight : '700'
-                             });
-                             </script>
-                        </div>
-
                    </div>
-                   
-
-
-
-                  </div>
+                  
                   <div class="modal-footer">
                     <button type="submit" class="btn btn-danger"  onclick="return binarypos();">Submit</button>
                   </div>
@@ -3374,7 +3647,7 @@ if($_POST['action']=='showeeditslidernews')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Slider Page</h4>
                   </div>
 
@@ -3467,7 +3740,7 @@ if($_POST['action']=='showeeditbc')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Slider Page</h4>
                   </div>
 
@@ -3531,7 +3804,7 @@ if($_POST['action']=='showeedittut')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Tutorial Page</h4>
                   </div>
 
@@ -3634,6 +3907,9 @@ if($_POST['action']=='showeedithomepage')
 	$row=$obj_query->get_all_row($res);
 	$arr=array("","About Us","Testimonial","Privacy Policy","Term and Conditions","Income Disclaimer","Policy and Procedures","Affiliate Agreement and Conditions");
 	$cond = " id='".$page_id."'";
+        $keyvQ = $obj_query->query("*","manage_homepage_key_value","section_id='$m_id'");
+        $keyvs=$obj_query->get_all_row($keyvQ);
+        $keylabel = '';
 	?>
     <script>
 	function total_prices()
@@ -3685,7 +3961,7 @@ if($_POST['action']=='showeedithomepage')
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Edit Home Page Section</h4>
                   </div>
 
@@ -3694,21 +3970,80 @@ if($_POST['action']=='showeedithomepage')
                            <label for="name">Title</label>
                            <input class="form-control for-height" type="text" id="title" name="title" value="<?=$row['title']?>" />
                         </div>
+                        <?php
+                        if($m_id!='3'  && $m_id!='4' && $m_id!='5' && $m_id!='6'){
+                        ?>
                         <div class="form-group">
                            <label for="name">Sub Title</label>
                            <input class="form-control for-height" type="text" id="title" name="sub_title" value="<?=$row['sub_title']?>" />
                         </div>
+                        <?php
+                        }
+                        if($m_id=='1'){
+                        ?>
                   	<div class="form-group">
                            <label for="name">Video URL</label>
                            <input class="form-control for-height" type="text" id="title" name="video_url" value="<?=$row['video_url']?>" />
                         </div>    
-
+                        <?php
+                        }
+                        if($m_id=='2'){
+                            $keylabel = 'FEATURE';
+                        ?>
+                        <div class="form-group">
+                           <label for="name">Image</label>
+                           <input class="form-control for-height" type="file" id="image" name="image" value="" />
+                        </div>
+                        <div class="form-group">
+                           <img src="homepage_image/<?=$row['image']?>" width="100" height="100">
+                        </div>
+                        <?php
+                        }
+                        if($m_id=='5'){
+                            $keylabel = 'Benefit';
+                        }
+                        if($m_id=='6'){
+                            $keylabel = 'Partner Image';
+                        }
+                        //$keyvQ = $obj_query->query("*","manage_homepage_key_value","section_id='".$m_id."'");
+                        $keyvQ=$obj_query->query_execute("select * from manage_homepage_key_value where section_id='".$m_id."'");
+                        $ff=0;
+                        while($keyv=$obj_query->get_all_row($keyvQ)){
+                        $ff++;    
+                        ?>
+                        <div class="form-group">
+                            <label><?=$keylabel.' '.$ff;?></label>
+                        </div>
+                        <?php 
+                        if($m_id!='6')
+                        { ?>
+                        <div class="form-group">
+                            <input class="form-control for-height" type="text" id="key<?=$keyv['id'];?>" name="keyvalue[<?=$keyv['id'];?>][key]" value="<?=$keyv['key']?>" placeholder="future key"/>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control for-height" rows="6" id="editor<?=$keyv['id'];?>" name="keyvalue[<?=$keyv['id'];?>][value]" placeholder="future value"><?=$keyv['value'];?></textarea>
+                        </div>
+                        <?php
+                        } else {
+                        ?>
+                        <div class="form-group">
+                           <input class="form-control for-height" type="file" id="pimage<?=$keyv['id'];?>" name="pimage[<?=$keyv['id'];?>]" />
+                        </div>
+                        <div class="form-group">
+                           <img src="homepage_image/<?=$keyv['image']?>" width="100" height="100">
+                        </div>
+                        <?php
+                        }
+                        }
+                        ?>
                   	    <div class="form-group">
                            <label for="name">Display Status - </label>
                            <input type="radio" id="news_status2" name="display_status" value="1" <?php if($row['display_status'] == 1){?> checked <?php } ?>/>Yes
                            <input type="radio" id="news_status1" name="display_status" value="0" <?php if($row['display_status'] == 0){?> checked <?php } ?> />No
                         </div>
-                        
+                        <?php
+                        if($m_id!='2' && $m_id!='4' && $m_id!='5' && $m_id!='6'){
+                        ?>
                         <div class="form-group">
                           <label for="name">Content</label>
                           <textarea class="form-control for-height" rows="3" id="editor21" name="description" placeholder="Content"><?=$row['description']?></textarea>
@@ -3728,7 +4063,9 @@ if($_POST['action']=='showeedithomepage')
                              });
                              </script>
                         </div>
-
+                        <?php
+                        }
+                        ?>
                    </div>
 
                   <div class="modal-footer">

@@ -1,6 +1,10 @@
 <?php
 include("controller/connection.php");
 include("includes/common_function.php");
+if(isset($_REQUEST['id']))
+{
+	$project_id = $_REQUEST['id'];
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js html-loading wf-active ie old-browser lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
@@ -53,6 +57,11 @@ var CloudFwOp = {"themeurl":"http:\/\/envision.wptation.com\/wp-content\/themes\
 <script type='text/javascript' src='js/noconflict.js'></script>
 <script type='text/javascript' src='js/webfont.js'></script>
 <script type='text/javascript' src='js/comment-reply.min.js'></script>
+
+<script type='text/javascript' src='unitegallery-master/package/unitegallery/js/unitegallery.min.js'></script>	
+<link rel='stylesheet' href='unitegallery-master/package/unitegallery/css/unite-gallery.css' type='text/css' />
+<script type='text/javascript' src='unitegallery-master/package/unitegallery/themes/default/ug-theme-default.js'></script>
+<link rel='stylesheet' href='unitegallery-master/package/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
 <script type="text/javascript">
 (function(){
 	"use strict";
@@ -112,281 +121,412 @@ var CloudFwOp = {"themeurl":"http:\/\/envision.wptation.com\/wp-content\/themes\
       <header id="page-header" class="clearfix">
 <?php 
 include("includes/header.php");
-?>        <!-- /#header-container --> </header>
-      
+?>  
+        <!-- /#header-container --> </header>
+		
 <?php
-$cond = " id=3";
-$conds = " id=1";
-$getInfoByTableNameAndID = getInfoByTableNameAndID("manage_pages",$cond);
-$getInfoByTableNameAndIDs = getInfoByTableNameAndID("manage_how_it_other",$conds);
-
+$cond = " id='".$project_id."'";
+$getInfoByTableNameAndID = getInfoByTableNameAndID("manage_projects",$cond);
 ?>
-
 <div id="titlebar" class="titlebar-hautq cover">
 			<div class="container relative">
 				<div id="titlebar-text">
-					<h2 id="titlebar-title"><strong><?=$getInfoByTableNameAndID['page_name']?></strong></h2>
+											<h2 id="titlebar-title"><strong><?=$getInfoByTableNameAndID['title'];?></strong></h2>
 					
-<div class="titlebar-text-content"><p><?=$getInfoByTableNameAndID['page_head']?></p>
+											<div class="titlebar-text-content"><?=$getInfoByTableNameAndID['short_desc'];?>
 </div>
+<?php
+if(isset($_SESSION['adid']) && !empty($_SESSION['adid'])){
+if($getInfoByTableNameAndID['project_type'] <= 2){    
+$s="select * from registration where user_name='".$_SESSION['adid']."'";
+$ffr=mysql_query($s);
+$f=mysql_fetch_array($ffr);
+$user_id=$f['user_id'];
+$upq = mysql_query("select * from user_project WHERE project_id='".$getInfoByTableNameAndID['id']."' AND user_id='".$user_id."'");
+$up = mysql_fetch_array($upq);
+?>
+<div class="titlebar-text-content">                                                                                        
+<input type="checkbox" <?=$up['status']=='1'?'checked=""':'';?> id="select_bus_pro_<?=$getInfoByTableNameAndID['id']?>" is-checked="<?=$up['status'];?>" name="select_bus_pro_<?=$getInfoByTableNameAndID['id']?>" style="margin:0px;"/>
+<lable for="select_bus_pro_<?=$getInfoByTableNameAndID['id']?>">Select your eBusiness</lable>
+</div>
+<script type="text/javascript">
+jQuery('#select_bus_pro_<?=$getInfoByTableNameAndID['id']?>').on('change',function(){
+    var status_check = jQuery('#select_bus_pro_<?=$getInfoByTableNameAndID['id']?>').attr('is-checked');
+    var status = '0';
+    if(status_check==='0' || status_check===''){
+        status = '1';
+    }
+    jQuery.ajax({
+        url: 'ajax/add_selectproject.php',
+        data: 'user_id=<?=$user_id;?>&project_id=<?=$getInfoByTableNameAndID['id']?>&status='+status,
+        type: 'POST',
+        success: function (data) {
+            jQuery('#select_bus_pro_<?=$getInfoByTableNameAndID['id']?>').attr('is-checked',status);
+        }
+    });
+});
+</script>
+<?php    
+}
+}
+?>
 									</div>
-									<div id="titlebar-breadcrumb"><div id="breadcrumb" class="ui--box-alias centerVertical"><div class="ui-bc ui-breadcrumbs breadcrumbs" itemprop="breadcrumb"><span class="ui-bc-first"><a href="#" title="Envision" rel="home" class="ui-bc-first">Home</a></span> <span class="ui-bc-seperator"> <i class="ui--caret fontawesome-angle-right px18"></i> </span> <span class="ui-bc-last"><?=$getInfoByTableNameAndID['page_name']?></span></div></div></div>
+									<div id="titlebar-breadcrumb"><div id="breadcrumb" class="ui--box-alias centerVertical"><div class="ui-bc ui-breadcrumbs breadcrumbs" itemprop="breadcrumb"><span class="ui-bc-first"><a href="http://envision.wptation.com" title="Envision" rel="home" class="ui-bc-first">Home</a></span> <span class="ui-bc-seperator"> <i class="ui--caret fontawesome-angle-right px18"></i> </span> <span class="ui-bc-last"><?=$getInfoByTableNameAndID['title'];?></span></div></div></div>
 							</div>
 		</div><!-- /#titlebar -->
 
-<div id="page-content" class="no-sidebar-layout"><div class="container"><div id="the-content" >
-	
-<?php
-echo stripslashes($getInfoByTableNameAndID['page_desc']);
-?>
+	<div id="page-content" class="no-sidebar-layout">
+            <div class="container">
+                <div id="the-content" >
 
-<div  class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}"></div>
-<?php
-$howmq = mysql_query("SELECT * FROM manage_how_it_other WHERE id=1 AND display_status=1");
-$how4stepData = mysql_fetch_assoc($howmq);
-if(!empty($how4stepData)){
-?>
-<div  id="section-gsy1k" class="fullwidth-container ui--section clearfix inner-shadow-3 section-gsy1k color--dark" style="margin-top: 12px;">
-   <div class="container">
-       <h3 class="wht-txt"><?=$how4stepData['title'];?></h3>
-        <?php
-        $Cons = array();
-        $howcq = mysql_query("SELECT * FROM manage_how_it_other_content WHERE main_id=".$how4stepData['id']." AND status=1");
-        while($res = mysql_fetch_assoc($howcq))
-        {
-            $Cons[] = $res; 
-        }
-        if(!empty($Cons)){
-            $ConsDivd = array_chunk($Cons, 2);
-            $a=0;
-            foreach ($ConsDivd as $Contents){
-        ?>
-            <div class="ui-row row">
-                <?php
-                $c=0;
-                foreach ($Contents as $Content){
-                    $a++;
-                    $c++;
-                    if($c==1){
-                ?>
-                    <div   class="ui-column span6">
-                        <div  class="ui--tagline-box-wrapper ui--animation clearfix">
-                           <div  id="tagline-1" class="ui--tagline-box ui-row clearfix ui--tagline-box-custom-color radius-3px">
-                              <div class="ui-row row">
-                                 <div   class="ui-column span3">
-                                    <div class="hidden-phone "></div>
-                                 </div>
-                                 <div   class="ui-column span9">
-                                    <div  class="ui--animation-in make--fx--appear ui--pass clearfix" data-fx="fx--appear" data-delay="400" data-start-delay="0">
-                                       <em style="position: absolute;padding: 10px 12px;color: #fff;background: #060;font-size: 28px; top: -18px;border-radius: 54px;font-weight: bold;right: -10px;"><?=$a;?></em>
-                                       <h3 class="ui--animation" style="text-align: right; color: #333333 !important; margin-bottom: 0px; "><strong><?=$Content['name']?> </strong></h3>
-                                       <div class="auto-format ui--animation">
-                                          <p class="text-right" style="color: #333;"><?=$Content['description']?></p>
-                                       </div>
-                                       <div class="text-right ui--animation"><a class="btn btn-normal btn-icon-right with-icon button-hover btn-primary" href="<?=!empty($Content['url'])?$Content['url']:'#'?>" style="margin-bottom: 0px;">Read More<span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-caret-right"></i></span></a> </div>
-                                       <div class="ui--image-wrap clearfix hidden-phone "><img  id="ui--image-4" class="ui--image ui--animation" src="admin/howitwork_image/<?=$Content['image']?>" alt="" title="" data-at2x="" width="220" height="220" style="position: absolute; bottom: -15px; left: -50px; max-width: 0px;"/></div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="ui--shadow ui--shadow-type-8  clearfix">
-                              <img src="images/shadow-8.png" alt="" />
-                           </div>
+                   
+                    
+                    
+                    
+        <!---old slider-->            
+            <div id="section-le6to" class="ui--section clearfix section-le6to" style="margin-top: 0px;  margin-bottom: 12px;  padding-top: 0px;  padding-bottom: 12px;"><div class="container"><div class="ui--animation-in make--fx--caption-bottom ui--pass clearfix" data-fx="fx--caption-bottom" data-delay="250" data-start-delay="0"><div class="portfolio-container-wrapper ui--pass" data-layout="masonry" data-columns="3" style="margin-top: 0px;"><div class="clearfix"></div>
+                                         
+<div id="portfolio-UyATk" class="portfolio-container layout--masonry clearfix">
+<div class="ui--masonry ui--row row clearfix ui--done isotope" style="visibility: visible; overflow: hidden; position: relative; height: 500px;">
+
+<div class="ui-row row">
+	<div class="ui-column span12 filter-app ui--isotope-item isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;">
+		<div class="ui--block ui--content-item ui--pass fx--caption-bottom ui--animation-fire" delay="0" style="padding-left: 12%;">
+			<div id="gallery" style="display:none;">
+                            <?php
+                            $i=1;
+                            //$cond = "project_id='".$project_id."'";
+                            //$getInfoByTableName = getInfoByTableNameID("manage_projects_images",$cond);
+                            $imgq= mysql_query("SELECT * FROM manage_projects_images WHERE project_id='".$project_id."'");
+                            while($records = mysql_fetch_array($imgq))
+                            {
+                            ?>
+                            <img alt="<?=$records['image'];?>" src="admin/project_image/<?=$records['image'];?>" data-image="admin/project_image/<?=$records['image'];?>">
+                            <?php $i++;
+                            } 
+                            if(!empty($getInfoByTableNameAndID['youtube_id']))
+                            {    
+                            ?>           
+                            <img alt="Youtube Video" data-type="youtube" data-videoid="<?=$getInfoByTableNameAndID['youtube_id'];?>" data-description="You can include youtube videos easily!">
+                            <?php
+                            }
+                            ?>
+                            <!--<img alt="Vimeo Video" data-type="vimeo" src="http://i.vimeocdn.com/video/447294219_200x150.jpg" data-image="http://i.vimeocdn.com/video/447294219_640.jpg" data-videoid="73234449" data-description="This gallery can also play vimeo videos!">                                    -->
                         </div>
-                    </div>
-                <?php
-                    }
-                    else
+                        <script type="text/javascript">
+
+                                jQuery(document).ready(function(){
+
+                                        jQuery("#gallery").unitegallery({
+                                                thumb_fixed_size:false,
+                                                theme_enable_text_panel: false
+                                        });
+
+                                });
+
+                        </script>
+<!--			<div class="ui--shadow ui--shadow-type-2 ui--shadow-abs ui--shadow-reset clearfix">
+				<img src="images/shadow-2.png" alt="">
+			</div>-->
+		</div></div> 
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+
+</div></div></div></div>        
+        <!--old slider end -->   
+
+<div class="ui-row row">
+<div class="ui-column span12"><div  class="ui--animation-in make--fx--fadein-ltr ui--pass clearfix" data-fx="fx--fadein-ltr" data-delay="400" data-start-delay="0">
+<?=$getInfoByTableNameAndID['project_desc'];?>
+</div></div> 
+
+</div>
+ 
+<!-- ------>
+ </br>
+<?php
+$tabMainQ = "SELECT `tab_id` FROM manage_projects_tab_content WHERE project_id='".$project_id."' GROUP BY `tab_id`";
+$tabMainQQ= mysql_query($tabMainQ);
+while($tabMainR = mysql_fetch_array($tabMainQQ))
+{
+    $Tabs[] = $tabMainR['tab_id'];
+}
+if(!empty($Tabs))
+{
+$Tab_Ids = implode(',', $Tabs);    
+?>
+<div class="ui--tabs ui--tabs-mega clearfix text-left ui--done" style="  margin-bottom: 0px;">
+   <div class="ui--tabs-header ui--accent-gradient ui--accent-color fullwidth-container clearfix">
+      <div class="container">
+         <ul class="ui--tabs-titles clearfix unstyled">
+            <?php
+            $getTabsR = "SELECT * FROM manage_projects_tab_category WHERE id IN(".$Tab_Ids.") AND display_status=1";
+            $getTabsRR= mysql_query($getTabsR);
+            $count_getTabsR = mysql_num_rows($getTabsRR);
+            $t = 0;
+            $TabSecs = array();
+            while($tabs = mysql_fetch_array($getTabsRR))
+            {
+                $t++;
+                $TabSecs[] = $tabs['id'];
+                $activeTab = ($t==1 ? 'first-item active' : ($t==$count_getTabsR ? 'last-item' : ''));
+            ?>
+                <li class="<?=$activeTab;?>">
+                    <h5><a href="#tab_<?=$tabs['id'];?>"><?=$tabs['name']?></a></h5>
+                </li>
+            <?php    
+            }
+            ?>
+         </ul>
+      </div>
+   </div>
+   <div class="clearfix"></div>
+   <ul class="ui--tabs-contents text-left clearfix">
+       <?php
+       if(!empty($TabSecs)){
+           $a=0;
+           $countTabscontent = count($TabSecs);
+           foreach ($TabSecs as $TabData){
+               $a++;
+               $activeMainTab = ($a==1 ? 'first-item active' : ($a==$countTabscontent ? 'last-item hidden' : 'hidden'));
+       ?>
+            <li class="<?= $activeMainTab;?>">
+                <div class="ui-row row">
+                    <?php
+                    $getcontentR = "SELECT * FROM manage_projects_tab_content WHERE tab_id=".$TabData."  AND status=1";
+                    $getcontentRR= mysql_query($getcontentR);
+                    while($content = mysql_fetch_array($getcontentRR))
                     {
                     ?>
-                    <div   class="ui-column span6">
-                        <div  class="ui--tagline-box-wrapper ui--animation clearfix">
-                           <div  id="tagline-2" class="ui--tagline-box ui-row clearfix ui--tagline-box-custom-color radius-3px">
-                              <div class="ui-row row">
-                                 <div   class="ui-column span9">
-                                    <div  class="ui--animation-in make--fx--appear ui--pass clearfix" data-fx="fx--appear" data-delay="400" data-start-delay="400">
-                                       <em style="position: absolute;padding: 10px 12px;color: #fff;background: #060;font-size: 28px; top: -18px;border-radius: 54px;font-weight: bold;right: -10px;"><?=$a;?></em>
-                                       <h3 class="ui--animation " style="color: #333333 !important; margin-bottom: 0px; "><strong> <?=$Content['name']?></strong> </h3>
-                                       <div class="auto-format ui--animation">
-                                          <p class="text-left" style="color: #333;"><?=$Content['description']?></p>
-                                       </div>
-                                       <a class="btn btn-normal btn-icon-right with-icon button-hover btn-yellow ui--animation" href="<?=!empty($Content['url'])?$Content['url']:'#'?>" style="margin-bottom: 0px;">Read More<span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-caret-right"></i></span></a> 
-                                       <div class="ui--image-wrap clearfix hidden-phone "><img  id="ui--image-5" class="ui--image ui--animation" src="admin/howitwork_image/<?=$Content['image']?>" alt="" title="" data-at2x="" width="200" height="200" style="position: absolute; bottom: -0px; right: -20px; max-width: 0px;"/></div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="ui--shadow ui--shadow-type-8  clearfix">
-                              <img src="images/shadow-8.png" alt="" />
-                           </div>
-                        </div>
+                    <div class="ui-column span3">
+                       <div class="ui--icon-box position--top">
+                           <span class="ui--icon-box-icon ui--animation"><img class="ui--icon" src="admin/project_tab/<?=$content['image']?>" alt="" data-at2x="" data-retina-auto="1"></span>
+                          <div class="ui--icon-box-content ui--animation">
+                             <h4 class="ui--icon-box-title ui--animation text-center" data-fx="fx--no-effect"><span> <strong><?=$content['name']?></strong></span></h4>
+                             <div class="ui--animation ui--icon-box-text text-justify" data-fx="fx--no-effect">
+                                <p><?=$content['description']?></p>
+                             </div>
+                          </div>
+                       </div>
                     </div>
                     <?php
                     }
-                }
-                ?>
-
-            </div>
-        <?php
-            }
-        }
-        ?>
-   </div>
+                    ?>
+                </div>
+            </li>
+      <?php
+           }
+       }
+      ?>
+   </ul>
 </div>
-<!-- /.fullwidth-container -->
 <?php
 }
 ?>
-<div class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}"></div>
-<?php
-$howmqg = mysql_query("SELECT * FROM manage_how_it_other WHERE id=3 AND display_status=1");
-$how4stepDatag = mysql_fetch_assoc($howmqg);
-if(!empty($how4stepDatag)){
-?>
-<div class="ui--title  ui--title-bordered text-left">
-    <div class="ui--title-holder">
-        <h3 class="ui--title-text"><strong><?=$how4stepDatag['title']?></strong> </h3>
-        <div class="ui--title-borders ui--title-border-left"></div>
-        <div class="ui--title-borders ui--title-border-right"></div>
-    </div>
-</div>
-<p><?=$how4stepDatag['second_desc']?></p>
-<?php
-$Cons = array();
-$howcq = mysql_query("SELECT * FROM manage_how_it_other_content WHERE main_id=".$how4stepDatag['id']." AND status=1");
-while($res = mysql_fetch_assoc($howcq))
-{
-    $Cons[] = $res; 
-}
-if(!empty($Cons)){
-    $ConsDivd = array_chunk($Cons, 3);
-    $a=0;
-    foreach ($ConsDivd as $Contents){
-?>
-<div class="ui-row row">
-    <?php
-    foreach ($Contents as $Content){
-    $a++;
-    if($a==1){ $image='fontawesome-tint';}else if($a==2){$image='fontawesome-asterisk';}else if($a==3){$image='fontawesome-magic';}else if($a==4){$image='fontawesome-laptop';}else if($a==5){$image='fontawesome-beaker';}else if($a==6){$image='fontawesome-globe';}else{$image='fontawesome-asterisk';}
-    ?>
-    <div class="ui-column span4">
-        <div class="ui--icon-box position--left">
-            <span class="ui--icon-box-icon ui--animation">
-                <i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon <?=$image;?> icon-inline-block"></i>
-            </span>
-            <div class="ui--icon-box-content ui--animation">
-                <h3 data-fx="fx--no-effect" class="ui--icon-box-title ui--animation text-left">
-                    <span><?=$Content['name']?></span></h3>
-                    <div data-fx="fx--no-effect" class="ui--animation ui--icon-box-text text-left">
-                        <p><?=$Content['description']?></p>
-                        <p><a href="<?=!empty($Content['url'])?$Content['url']:'#'?>">Take a tour</a></p>
-                    </div>
-            </div>
-        </div>
-    </div> 
-    <?php
-    }
-    ?>
-<!-- <div class="ui-column span4"><div class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-asterisk icon-inline-block"></i></span><div class="ui--icon-box-content ui--animation"><h3 data-fx="fx--no-effect" class="ui--icon-box-title ui--animation text-left"><span>Extensive Options</span></h3><div data-fx="fx--no-effect" class="ui--animation ui--icon-box-text text-left"><p>Fusce dapibus eget nulla et gravida. Nullam rutrum pretium aliquet. Quisque dictum sollicitudin egestas. Nullam placerat ultricies neque, id posuere lacus tristique at. Nunc.</p>
-<p><a href="/features/">Take a tour â†’</a></p>
-</div></div></div></div> 
+<!-- ---- ------>
+ 
+<div  class="ui--divider ui--animation clearfix ui--divider-solid-line fullwidth-content" style="margin-top: 22px;  margin-bottom: 40px;"></div><div class="ui--title ui--animation ui--title-bordered text-left"><div class="ui--title-holder"><h3 class="ui--title-text"><strong>Latest Tweets from Us</strong> <a class="btn btn-small btn-icon-left with-icon button-hover btn-primary ui--animation" href="http://twitter.com/twitter" target="_blank" style="margin-left: 10px;  margin-top: 0px;  margin-bottom: 3px;"><span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-twitter"></i></span>follow us</a> </h3><div class="ui--title-borders ui--title-border-left"></div><div class="ui--title-borders ui--title-border-right"></div></div></div><div  class="ui--animation-in make--fx--caption-bottom ui--pass clearfix" data-fx="fx--caption-bottom" data-delay="150" data-start-delay="0"><div class="ui--carousel clearfix" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;0&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;arrows&quot;:true,&quot;rotate_time&quot;:0,&quot;animate&quot;:true}"><div class="slides"><div class="ui-row row">
+ <div   class="ui-column span4"><div class="ui--carousel-item ui--twitter-style-default ui--twitter-timeline-wrap ui--animation clearfix">
 
- <div class="ui-column span4"><div class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-magic icon-inline-block"></i></span><div class="ui--icon-box-content ui--animation"><h3 data-fx="fx--no-effect" class="ui--icon-box-title ui--animation text-left"><span>Page Composer</span></h3><div data-fx="fx--no-effect" class="ui--animation ui--icon-box-text text-left"><p>Donec accumsan a orci eu molestie. Maecenas rhoncus in dui et congue. Aliquam at sapien lorem. Mauris sodales ullamcorper magna et consequat. Morbi porta.</p>
-<p><a href="/features/">Take a tour â†’</a></p>
-</div></div></div></div> -->
+									<div class="ui--twitter-timeline clearfix">
 
-</div>
-<div data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:&quot;1px&quot;}}}" style="height: 1px;" class="ui--space clearfix"></div>
-<?php
-    }
-}
-?>
-<!--<div class="ui-row row">
- <div class="ui-column span4"><div class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-laptop icon-inline-block"></i></span><div class="ui--icon-box-content ui--animation"><h3 data-fx="fx--no-effect" class="ui--icon-box-title ui--animation text-left"><span>Responsive Design</span></h3><div data-fx="fx--no-effect" class="ui--animation ui--icon-box-text text-left"><p>Maecenas purus massa, sodales a malesuada id, feugiat eget nunc. Integer metus elit, sodales a euismod non, ullamcorper a quam. Integer consequat venenatis risus.</p>
-<p><a href="/features/">Take a tour â†’</a></p>
-</div></div></div></div> 
+										<div class="ui--twitter-timeline-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
+											<p>No matter where you're from, you can use Twitter to express affection and thanks to mom: <a href="https://t.co/wtEeSyzOM4" target="_blank">https://t.co/wtEeSyzOM4</a></p>
 
- <div class="ui-column span4"><div class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-beaker icon-inline-block"></i></span><div class="ui--icon-box-content ui--animation"><h3 data-fx="fx--no-effect" class="ui--icon-box-title ui--animation text-left"><span>Retina Ready</span></h3><div data-fx="fx--no-effect" class="ui--animation ui--icon-box-text text-left"><p>Nulla tellus quam, gravida eu vehicula sed, tempor sed nisi. Praesent mattis, neque quis porta blandit, sem dolor facilisis est, at vulputate est felis consectetur turpis.</p>
-<p><a href="/features/">Take a tour â†’</a></p>
-</div></div></div></div> 
+											<div class="ui--twitter-timeline-arrow"><i class="fontawesome-caret-down"></i></div>
+										</div>
 
- <div class="ui-column span4"><div class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-globe icon-inline-block"></i></span><div class="ui--icon-box-content ui--animation"><h3 data-fx="fx--no-effect" class="ui--icon-box-title ui--animation text-left"><span>Translation Ready</span></h3><div data-fx="fx--no-effect" class="ui--animation ui--icon-box-text text-left"><p>Quisque dignissim quam vitae orci fermentum consequat ac a erat. Nulla ac ornare mauris. Quisque nec metus pulvinar purus tristique luctus. Donec eget placerat.</p>
-<p><a href="/features/">Take a tour â†’</a></p>
-</div></div></div></div> 
+										
+										<div class="ui--twitter-timeline-brand clearfix ui--animation" data-fx="fx--fadein-btt">
 
-</div>
-<div class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}" class="ui--space clearfix"></div>-->
-    <?php
-}
-//echo stripslashes($getInfoByTableNameAndIDs['third_desc']);
-?>
+											
+											<div class="ui--twitter-timeline-image">
+												<div class="ui--twitter-timeline-image-position"><a href="http://twitter.com/twitter" target="_blank"><img src="http://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_normal.png" alt="" /></a></div>
+											</div>
 
-<div class="ui-row row">
+											<div class="ui--twitter-timeline-user">
+												<strong class="name">Twitter</strong>
+													<small class="cap timestamp"><a href="https://twitter.com/twitter/status/464831286830329856" class="muted" target="_blank">2 days ago</a> </small>
+											</div>
 
-<?php
-$getInfoByTableName = getInfoByTableName("manage_testimonials");
-foreach($getInfoByTableName as $records)
-{
-?>
- <div   class="ui-column span4"><div class="ui--carousel-item ui--testimonial-wrap  clearfix">
-			
-				<div class="ui--testimonial clearfix">
-					
-					<div class="ui--testimonial-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
-						<?=$records['step_desc']?>
+										</div>
 
-						<div class="ui--testimonial-arrow"><i class="fontawesome-caret-down"></i></div>
-					</div>
+									</div>
 
-					
-					<div class="ui--testimonial-brand  clearfix" data-fx="fx--fadein-btt">
 
-						
-						<div class="ui--testimonial-image">
-							<div class="ui--testimonial-image-position"><img src="admin/testimonial_image/<?=$records['image']?>" alt="Robyn Paton" /></div>
-						</div>
+								<div class="clearfix"></div>
+								</div></div> 
 
-						<div class="ui--testimonial-user">
-							<strong class="name"><?=$records['title']?></strong>
-								<small class="cap"><?=$records['designation']?></small>
-							</div>
-						</div>
+ <div   class="ui-column span4"><div class="ui--carousel-item ui--twitter-style-default ui--twitter-timeline-wrap ui--animation clearfix">
 
-				</div>	
-			
-			<div class="clearfix"></div>
-			</div></div> 
-<?php } ?>
-</div> 
-</div><div  class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}"></div><div  id="section-cr4zq" class="fullwidth-container ui--section clearfix inner-shadow-2 section-cr4zq" style="margin-top: 12px;  margin-bottom: -12px;"><div class="container"><div class="ui--client-list-wrapper  ui-row clearfix"><div class="ui--client-list ui--box ui-row clearfix ui--carousel" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;1&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;rotate_time&quot;:0}"><div class="slides">
+									<div class="ui--twitter-timeline clearfix">
 
-<div class="ui-row row">
+										<div class="ui--twitter-timeline-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
+											<p>We&#8217;re updating <a href="http://t.co/mIbPaWEhll" target="_blank">http://t.co/mIbPaWEhll</a> with a third column — more flexible for various screen sizes. http://t.co/cvWgoMjCME</p>
 
-<?php
-$i=1;
-$getInfoByTableName = getInfoByTableName("manage_partner");
-foreach($getInfoByTableName as $records)
-{
-	$records['image']; 
-	?>
-	 <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="admin/partner_image/<?=$records['image']?>" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-	<?php 
-	if($i%5 == 0)
-	{
-		?>
-        </div><div class="ui-row row">
-	<?php }
+											<div class="ui--twitter-timeline-arrow"><i class="fontawesome-caret-down"></i></div>
+										</div>
 
-}?>
+										
+										<div class="ui--twitter-timeline-brand clearfix ui--animation" data-fx="fx--fadein-btt">
+
+											
+											<div class="ui--twitter-timeline-image">
+												<div class="ui--twitter-timeline-image-position"><a href="http://twitter.com/twitter" target="_blank"><img src="http://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_normal.png" alt="" /></a></div>
+											</div>
+
+											<div class="ui--twitter-timeline-user">
+												<strong class="name">Twitter</strong>
+													<small class="cap timestamp"><a href="https://twitter.com/twitter/status/464526017030545409" class="muted" target="_blank">3 days ago</a> </small>
+											</div>
+
+										</div>
+
+									</div>
+
+
+								<div class="clearfix"></div>
+								</div></div> 
+
+ <div   class="ui-column span4"><div class="ui--carousel-item ui--twitter-style-default ui--twitter-timeline-wrap ui--animation clearfix">
+
+									<div class="ui--twitter-timeline clearfix">
+
+										<div class="ui--twitter-timeline-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
+											<p>So much more than words: The ultimate guide to photo-sharing on Twitter. See it now: <a href="https://t.co/DB5eiCS627" target="_blank">https://t.co/DB5eiCS627</a></p>
+
+											<div class="ui--twitter-timeline-arrow"><i class="fontawesome-caret-down"></i></div>
+										</div>
+
+										
+										<div class="ui--twitter-timeline-brand clearfix ui--animation" data-fx="fx--fadein-btt">
+
+											
+											<div class="ui--twitter-timeline-image">
+												<div class="ui--twitter-timeline-image-position"><a href="http://twitter.com/twitter" target="_blank"><img src="http://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_normal.png" alt="" /></a></div>
+											</div>
+
+											<div class="ui--twitter-timeline-user">
+												<strong class="name">Twitter</strong>
+													<small class="cap timestamp"><a href="https://twitter.com/twitter/status/464478746380996608" class="muted" target="_blank">3 days ago</a> </small>
+											</div>
+
+										</div>
+
+									</div>
+
+
+								<div class="clearfix"></div>
+								</div></div> 
 
 </div> 
+<div class="ui-row row">
+ <div   class="ui-column span4"><div class="ui--carousel-item ui--twitter-style-default ui--twitter-timeline-wrap ui--animation clearfix">
 
-</div></div></div></div></div><!-- /.fullwidth-container -->
+									<div class="ui--twitter-timeline clearfix">
+
+										<div class="ui--twitter-timeline-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
+											<p>New <a href="http://t.co/JbzACuw5a2" target="_blank">http://t.co/JbzACuw5a2</a> profiles will be turned on for everyone May 28. Get ahead of the curve &amp; update yours: <a href="http://t.co/GpCan7yXGw" target="_blank">http://t.co/GpCan7yXGw</a></p>
+
+											<div class="ui--twitter-timeline-arrow"><i class="fontawesome-caret-down"></i></div>
+										</div>
+
+										
+										<div class="ui--twitter-timeline-brand clearfix ui--animation" data-fx="fx--fadein-btt">
+
+											
+											<div class="ui--twitter-timeline-image">
+												<div class="ui--twitter-timeline-image-position"><a href="http://twitter.com/twitter" target="_blank"><img src="http://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_normal.png" alt="" /></a></div>
+											</div>
+
+											<div class="ui--twitter-timeline-user">
+												<strong class="name">Twitter</strong>
+													<small class="cap timestamp"><a href="https://twitter.com/twitter/status/463786813211963397" class="muted" target="_blank">5 days ago</a> </small>
+											</div>
+
+										</div>
+
+									</div>
+
+
+								<div class="clearfix"></div>
+								</div></div> 
+
+ <div   class="ui-column span4"><div class="ui--carousel-item ui--twitter-style-default ui--twitter-timeline-wrap ui--animation clearfix">
+
+									<div class="ui--twitter-timeline clearfix">
+
+										<div class="ui--twitter-timeline-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
+											<p>via <a href="http://www.twitter.com/amazon" target="_blank">@amazon</a>: <a href="https://twitter.com/search?q=%23AmazonCart&#038;src=hash" target="_blank">#AmazonCart</a>: Add it Now. Buy it Later. Shop from within Twitter. <a href="https://t.co/K6RxONRaKT" target="_blank">https://t.co/K6RxONRaKT</a></p>
+
+											<div class="ui--twitter-timeline-arrow"><i class="fontawesome-caret-down"></i></div>
+										</div>
+
+										
+										<div class="ui--twitter-timeline-brand clearfix ui--animation" data-fx="fx--fadein-btt">
+
+											
+											<div class="ui--twitter-timeline-image">
+												<div class="ui--twitter-timeline-image-position"><a href="http://twitter.com/twitter" target="_blank"><img src="http://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_normal.png" alt="" /></a></div>
+											</div>
+
+											<div class="ui--twitter-timeline-user">
+												<strong class="name">Twitter</strong>
+													<small class="cap timestamp"><a href="https://twitter.com/twitter/status/463330559595249666" class="muted" target="_blank">6 days ago</a> </small>
+											</div>
+
+										</div>
+
+									</div>
+
+
+								<div class="clearfix"></div>
+								</div></div> 
+
+ <div   class="ui-column span4"><div class="ui--carousel-item ui--twitter-style-default ui--twitter-timeline-wrap ui--animation clearfix">
+
+									<div class="ui--twitter-timeline clearfix">
+
+										<div class="ui--twitter-timeline-content ui--box ui--gradient ui--gradient-grey auto-format clearfix">
+											<p>It&#8217;s World Press Freedom Day. Share what freedom means to you. <a href="https://twitter.com/search?q=%23pressfreedom&#038;src=hash" target="_blank">#pressfreedom</a> <a href="https://t.co/kGC1DMNXGw" target="_blank">https://t.co/kGC1DMNXGw</a></p>
+
+											<div class="ui--twitter-timeline-arrow"><i class="fontawesome-caret-down"></i></div>
+										</div>
+
+										
+										<div class="ui--twitter-timeline-brand clearfix ui--animation" data-fx="fx--fadein-btt">
+
+											
+											<div class="ui--twitter-timeline-image">
+												<div class="ui--twitter-timeline-image-position"><a href="http://twitter.com/twitter" target="_blank"><img src="http://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_normal.png" alt="" /></a></div>
+											</div>
+
+											<div class="ui--twitter-timeline-user">
+												<strong class="name">Twitter</strong>
+													<small class="cap timestamp"><a href="https://twitter.com/twitter/status/462292323624177670" class="muted" target="_blank">9 days ago</a> </small>
+											</div>
+
+										</div>
+
+									</div>
+
+
+								<div class="clearfix"></div>
+								</div></div> 
+
+</div> 
+</div></div></div>
 
 	</div></div><!-- /.container --></div><!-- /#page-content -->
 
-
-      <!-- /#page-content -->
 <?php 
 include("includes/footer.php");
 ?>  
@@ -428,7 +568,7 @@ var woocommerce_params = {"countries":"{\"AF\":[],\"AT\":[],\"BE\":[],\"BI\":[],
 <script type='text/javascript' src='js/waypoints-sticky.js'></script>
 <script type='text/javascript' src='js/jquery.viewport.mini.js'></script>
 <script type='text/javascript' src='js/jquery.flexslider.js'></script>
-<script type='text/javascript' src='js/widgets.js'></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
 <script type='text/javascript' src='js/jquery.jplayer.js'></script>
 
 <script type="text/javascript">

@@ -243,6 +243,30 @@ if(isset($_POST['action']))
 		case "add_manage_homepage":
 		$obj_rep->_Add_manage_homepage();
 		break;
+		case "add_packages_feature":
+		$obj_rep->_Add_packages_feature();
+		break;
+		case "add_packages_tab":
+		$obj_rep->_Add_packages_tab();
+		break;
+		case "add_packages_tab_content":
+		$obj_rep->_Add_packages_tab_content();
+		break;
+		case "add_packages_page_title":
+		$obj_rep->_Add_packages_page_title();
+		break;
+		case "add_projects_category":
+		$obj_rep->_Add_projects_category();
+		break;
+		case "add_projects_tab_category":
+		$obj_rep->_Add_projects_tab_category();
+		break;
+		case "add_project_tab_content":
+		$obj_rep->_Add_project_tab_content();
+		break;
+		case "manage_footer":
+		$obj_rep->_Manage_footer();
+		break;
 	}
 }
 ?>

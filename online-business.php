@@ -1,6 +1,16 @@
 <?php
+@ini_set('display_errors','Off');
+@ini_set('error_reporting',0);
+session_start();
 include("controller/connection.php");
 include("includes/common_function.php");
+if(!isset($_SESSION['adid']) || empty($_SESSION['adid'])){
+    header('location:index.php');
+} 
+$s="select * from registration where user_name='".$_SESSION['adid']."'";
+$ffr=mysql_query($s);
+$f=mysql_fetch_array($ffr);
+$user_id=$f['user_id'];
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js html-loading wf-active ie old-browser lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
@@ -125,152 +135,150 @@ var CloudFwOp = {"themeurl":"http:\/\/envision.wptation.com\/wp-content\/themes\
 							</div>
 		</div><!-- /#titlebar -->
 
-<div id="page-content" class="sidebar-layout ui-row sidebar-left"><div class="container"><div id="the-content" >
-<div id="section-cr4zq" class="ui--section clearfix inner-shadow-2" style="margin-top: 30px;  margin-bottom: 0px;  padding-top: 40px;  padding-bottom: 22px;"><div class="ui--title ui--animation ui--title-bordered text-left"><div class="ui--title-holder"><h3 class="ui--title-text"> Featured <strong>Online Businesses</strong>  </h3><div class="ui--title-borders ui--title-border-left"></div><div class="ui--title-borders ui--title-border-right"></div></div></div><div  class="ui--animation-in make--fx--caption-right ui--pass clearfix" data-fx="fx--caption-right" data-delay="250" data-start-delay="0"><div class="portfolio-container-wrapper ui--pass" data-layout="carousel" data-columns="3"><div id="portfolio-n1eei" class="portfolio-container layout--carousel clearfix"><div class="ui--carousel clearfix" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;FALSE&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;arrows&quot;:true,&quot;rotate_time&quot;:0,&quot;animate&quot;:true}"><div class="slides"><div class="ui-row row">
- <div class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="detail-page.html"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/phone-email-1024x682-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Product Wholesale & Retailing</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
+<div id="page-content" class="sidebar-layout ui-row sidebar-left"><div class="container">
+        <div id="the-content" >
+        
+<div id="section-cr4zq" class="ui--section clearfix inner-shadow-2" style="margin-bottom: 0px;  padding-top: 10px;  padding-bottom: 22px;">
+   <div class="ui--title ui--animation ui--title-bordered text-left">
+      <div class="ui--title-holder">
+         <h3 class="ui--title-text"><strong>Online Businesses</strong>  </h3>
+         <div class="ui--title-borders ui--title-border-left"></div>
+         <div class="ui--title-borders ui--title-border-right"></div>
+      </div>
+   </div>
+   <div  class="ui--animation-in make--fx--caption-right ui--pass clearfix" data-fx="fx--caption-right" data-delay="250" data-start-delay="0">
+      <div class="portfolio-container-wrapper ui--pass" data-layout="carousel" data-columns="3">
+         <div id="portfolio-n1eei" class="portfolio-container layout--carousel clearfix">
+            <div class="ui--carousel clearfix" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;FALSE&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;arrows&quot;:true,&quot;rotate_time&quot;:0,&quot;animate&quot;:true}">
+               <div class="slides">
+                   <?php
+                    $catwhere = '';
+                    if(isset($_REQUEST['category']) && $_REQUEST['category'] > 0){
+                        $catwhere = ' category_id="'.$_REQUEST['category'].'" AND ';
+                    }
+                    $proQ = mysql_query("select * from manage_projects WHERE".$catwhere." project_type=2 AND display_status=1");
+                    if(mysql_num_rows($proQ) > 0){
+                    while($proj = mysql_fetch_array($proQ)){
+                        $projects[] = $proj;
+                    }
+                    }
+                    if(!empty($projects))
+                    {
+                        $i=0;
+                        $projectsArr = array_chunk($projects, 3);
+                        foreach ($projectsArr as $projects)
+                        {
+                         $i++;   
+                    ?>  
+                        <div class="ui-row row">
+                        <?php
+                        if($i!=1){
+                            echo '<div class="row">';
+                        }
+                        foreach ($projects as $project)
+                        {
+                         $proImgQ = mysql_query("select * from manage_projects_images WHERE project_id='".$project['id']."' AND status=1 LIMIT 1");
+                         $proImg = mysql_fetch_array($proImgQ)
+                                 
+                        ?>
+                        <div   class="ui-column span4">
+                            <div class="ui--block ui--content-item ui--pass ui--animation">
+                                <div  class="ui--content-box ui--box ui-row">
+                                    <div class="ui--content-box-header">
+                                        <div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;">
+                                            <a class="ui--content-box-link" href="project-detail-page.php?id=<?=$project['id']?>">
+                                                <div class="ui--content-box-image-default">
+                                                    <img  class="ui--content-box-image" src="admin/project_image/<?=$proImg['image']?>" alt="" title=""/>
+                                                </div>
+                                                <div class="ui--content-box-overlay">
+                                                    <div class="ui--content-box-overlay-background"></div>
+                                                    <div class="center">
+                                                        <span class="btn btn-grey ui--center-vertical">
+                                                            <span class="ui--content-box-overlay-button-text">Details</span>
 
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/audio-player-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="http://envision.wptation.com/works/audio-player/"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Arts & Entertainment</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/444075663_960-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Community and Socialization</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-<div class="row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/imac-standard-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Home & Garden</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/sync-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Automotive</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row" data-ligthbox="{&quot;src&quot;:[&quot;http:\/\/envision.wptation.com\/wp-content\/uploads\/2013\/07\/Designer-News-Mockup-1024x858.png&quot;,&quot;http:\/\/envision.wptation.com\/wp-content\/uploads\/2013\/07\/screen_shot_2013-07-08_at_11.01.18_am.png&quot;],&quot;desc&quot;:[&quot;Gallery in Lightbox&quot;,&quot;Gallery in Lightbox&quot;]}"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="images/Designer-News-Mockup.png"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/Designer-News-Mockup-1024x858-570x321.png" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">View Gallery</span><span class="ui--content-box-overlay-button-icon"><i class="ui--icon fontawesome-th-large icon-inline-block" style="font-size: 18px;  width: 22px;  height: 22px;"></i></span></span></div></div></a></div><a class="ui--content-box-link" href="images/Designer-News-Mockup.png"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Legal & Financial</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a class="ui--content-box-link" href="project-detail-page.php?id=<?=$project['id']?>">
+                                            <div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center">
+                                                <h5 class="ui--content-box-title-text"><?=$project['title']?></h5>
+                                            </div>
+                                        </a>
+                                        <div class="ui--content-box-content">
+                                            <div class="ui--content-box-content-text">
+                                                <p><?=$project['short_desc']?></p>
+                                                <p class="button"><a href="project-detail-page.php?id=<?=$project['id']?>">Read More</a></p>
+                                            </div>
+                                            <div class="ui--content-box-content-text">
+                                                <p style="text-align: center;">
+                                                    <?php
+                                                    $upq = mysql_query("select * from user_project WHERE project_id='".$project['id']."' AND user_id='".$user_id."'");
+                                                    $up = mysql_fetch_array($upq);
+                                                    ?>
+                                                    <input type="checkbox" <?=$up['status']=='1'?'checked':'';?> id="select_bus_pro_<?=$project['id']?>" is-checked="<?=$up['status'];?>" name="select_bus_pro_<?=$project['id']?>" style="margin:0px;"/>
+                                                    <lable for="select_bus_pro_<?=$project['id']?>">Select your eBusiness</lable>
+                                                    <script type="text/javascript">
+                                                    jQuery('#select_bus_pro_<?=$project['id']?>').on('change',function(){
+                                                        var status_check = jQuery('#select_bus_pro_<?=$project['id']?>').attr('is-checked');
+                                                        var status = '0';
+                                                        if(status_check==='0' || status_check===''){
+                                                            status = '1';
+                                                        }
+                                                        jQuery.ajax({
+                                                            url: 'ajax/add_selectproject.php',
+                                                            data: 'user_id=<?=$user_id;?>&project_id=<?=$project['id']?>&status='+status,
+                                                            type: 'POST',
+                                                            success: function (data) {
+                                                                jQuery('#select_bus_pro_<?=$project['id']?>').attr('is-checked',status);
+                                                            }
+                                                        });
+                                                    });
+                                                    </script>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
+                                        <img src="images/shadow-8.png" alt="" />
+                                </div>
+                            </div>
+                        </div> 
+                       <?php 
+                       }
+                       if($i!=1){
+                            echo '</div>';
+                        }
+                       ?>       
+                    </div> 
+                    <?php } 
+                    }
+                    ?>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
-
-<div class="row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/imac-standard-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Media & Communications</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/sync-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Beauty care & Services</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row" data-ligthbox="{&quot;src&quot;:[&quot;http:\/\/envision.wptation.com\/wp-content\/uploads\/2013\/07\/Designer-News-Mockup-1024x858.png&quot;,&quot;http:\/\/envision.wptation.com\/wp-content\/uploads\/2013\/07\/screen_shot_2013-07-08_at_11.01.18_am.png&quot;],&quot;desc&quot;:[&quot;Gallery in Lightbox&quot;,&quot;Gallery in Lightbox&quot;]}"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="images/Designer-News-Mockup.png"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/Designer-News-Mockup-1024x858-570x321.png" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">View Gallery</span><span class="ui--content-box-overlay-button-icon"><i class="ui--icon fontawesome-th-large icon-inline-block" style="font-size: 18px;  width: 22px;  height: 22px;"></i></span></span></div></div></a></div><a class="ui--content-box-link" href="images/Designer-News-Mockup.png"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Real Estate</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-</div>
-</div>
-
-<div class="ui-row row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/imac-standard-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Education</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/sync-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Sports & Recreation</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row" data-ligthbox="{&quot;src&quot;:[&quot;http:\/\/envision.wptation.com\/wp-content\/uploads\/2013\/07\/Designer-News-Mockup-1024x858.png&quot;,&quot;http:\/\/envision.wptation.com\/wp-content\/uploads\/2013\/07\/screen_shot_2013-07-08_at_11.01.18_am.png&quot;],&quot;desc&quot;:[&quot;Gallery in Lightbox&quot;,&quot;Gallery in Lightbox&quot;]}"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="images/Designer-News-Mockup.png"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/Designer-News-Mockup-1024x858-570x321.png" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">View Gallery</span><span class="ui--content-box-overlay-button-icon"><i class="ui--icon fontawesome-th-large icon-inline-block" style="font-size: 18px;  width: 22px;  height: 22px;"></i></span></span></div></div></a></div><a class="ui--content-box-link" href="images/Designer-News-Mockup.png"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Food & Dining</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-
-<div class="row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/imac-standard-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Travel & Transportation</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/sync-570x321.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Health & Medicine</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Nam quis nisl a enim placerat adipiscing et non tortor. Morbi eleifend arcu pretium ipsum dictum dictum.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-</div>
-</div>
-
- 
-</div></div></div></div></div></div>
     
 
 
 	</div>
 	<aside id="sidebars" class="widget-area  custom-widget-sidebar-skm7z">
 			<div id="cloudfw_subpages-2" class="widget widget_cloudfw_subpages"><h4 class="sidebar-widget-title ui--widget-title"><span>Categories</span></h4><ul class="ui--widget-subpages-smooth ui--box"> 
-
-<li class="page_item page-item-951 ui--gradient ui--gradient-grey"><a href="#"> Product Wholesale & Retailing</a> <em>(4)</em></li>
+                    <?php
+                    $proCQ = mysql_query("select * from manage_projects_category WHERE display_status=1");
+                    while($projC = mysql_fetch_array($proCQ)){
+                        $numCQ = mysql_query("select id from manage_projects WHERE project_type=2 AND category_id='".$projC['id']."'");
+                        $numC = mysql_num_rows($numCQ);
+                    ?>
+                        <li class="page_item page-item-951 ui--gradient ui--gradient-grey"><a href="online-business.php?category=<?=$projC['id']?>"><?=$projC['name']?></a> <em>(<?=$numC;?>)</em></li>            
+                    <?php            
+                    }
+                   ?>
+<!--<li class="page_item page-item-951 ui--gradient ui--gradient-grey"><a href="#"> Product Wholesale & Retailing</a> <em>(4)</em></li>
 <li class="page_item page-item-1023 ui--gradient ui--gradient-grey"><a href="#">Arts & Entertainment </a> (10)</li>
 <li class="page_item page-item-941 ui--gradient ui--gradient-grey"><a href="#">Community and Socialization </a> (6)</li>
 <li class="page_item page-item-963 ui--gradient ui--gradient-grey"><a href="#"> Home & Garden</a> (4)</li>
@@ -284,7 +292,7 @@ var CloudFwOp = {"themeurl":"http:\/\/envision.wptation.com\/wp-content\/themes\
 <li class="page_item page-item-988 ui--gradient ui--gradient-grey"><a href="#"> Sports & Recreation</a> (14)</li>
 <li class="page_item page-item-968 ui--gradient ui--gradient-grey"><a href="#"> Food & Dining</a> (5)</li>
 <li class="page_item page-item-958 ui--gradient ui--gradient-grey"><a href="#"> Travel & Transportation</a> (4)</li>
-<li class="page_item page-item-960 ui--gradient ui--gradient-grey"><a href="#"> Health & Medicine</a> (6)</li>
+<li class="page_item page-item-960 ui--gradient ui--gradient-grey"><a href="#"> Health & Medicine</a> (6)</li>-->
 </ul></div>	<div id="sidebar-shadow"><div id="sidebar-shadow-top"></div><div id="sidebar-shadow-bottom"></div></div>
 	</aside><!-- #custom(sidebar-skm7z) .widget-area -->
 

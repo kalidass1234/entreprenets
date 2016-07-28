@@ -113,29 +113,44 @@ var CloudFwOp = {"themeurl":"http:\/\/envision.wptation.com\/wp-content\/themes\
 <?php include("includes/header.php");?>
 
         <!-- /#header-container --> </header>
+<?php
+$sliderData = array();
+$sliderQ = mysql_query("select * from manage_slider WHERE display_status=1 ORDER BY id DESC");
+while($sliderd = mysql_fetch_array($sliderQ))
+{
+    $sliderData[] = $sliderd;
+}
+if(!empty($sliderData))
+{
+?>    
       <div class="ui--rev-slider hidden-phone "><!-- START REVOLUTION SLIDER 4.1.1 fullwidth mode -->
 
 <div id="rev_slider_9_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:400px;">
 	<div id="rev_slider_9_1" class="rev_slider fullwidthabanner" style="display:none;max-height:400px;height:400;">
-<ul>	<!-- SLIDE  -->
-	<li data-transition="fade" data-slotamount="7" data-masterspeed="300" >
+<ul>
+<?php
+foreach ($sliderData as $slider){
+?>
+    <!-- SLIDE  -->
+	<li data-transition="<?=$slider['slideshow_effect'];?>" data-slotamount="7" data-masterspeed="300" >
 		<!-- MAIN IMAGE -->
 		<img src="images/dummy.png"  alt="bg" data-lazyload="images/bg1.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 		<!-- LAYERS -->
 
 		<!-- LAYER NR. 1 -->
 		<div class="tp-caption tp-fade"
-			data-x="-45"
-			data-y="0" 
+			data-x="center"
+                        data-y="center"
+                        
 			data-speed="300"
 			data-start="500"
 			data-easing="easeOutExpo"
 			data-endspeed="300"
-			style="z-index: 2"><img src="images/man-laptop.png" alt="">
+			style="z-index: 2"><img src="admin/slider_image/<?=$slider['image'];?>" alt="">
 		</div>
 
 		<!-- LAYER NR. 2 -->
-		<div class="tp-caption caption-white-background tp-fade str tp-resizeme"
+<!--		<div class="tp-caption caption-white-background tp-fade str tp-resizeme"
 			data-x="600"
 			data-y="105" 
 			data-speed="300"
@@ -146,7 +161,7 @@ data-linktoslide="next"
 			style="z-index: 3"><strong>Your Journey to </strong> Self Employment
 		</div>
 
-		<!-- LAYER NR. 3 -->
+		 LAYER NR. 3 
 		<div class="tp-caption caption-long-text tp-fade col-text"
 			data-x="600"
 			data-y="165" 
@@ -157,7 +172,7 @@ data-linktoslide="next"
 			style="z-index: 4"><strong>Starts with</strong>
 		</div>
 
-		<!-- LAYER NR. 4 -->
+		 LAYER NR. 4 
 		<div class="tp-caption caption-primary tp-fade str"
 			data-x="600"
 			data-y="200" 
@@ -168,7 +183,7 @@ data-linktoslide="next"
 			style="z-index: 5">BMC Network
 		</div>
 
-		<!-- LAYER NR. 5 -->
+		 LAYER NR. 5 
 		<div class="tp-caption tp-fade stb"
 			data-x="600"
 			data-y="280" 
@@ -177,273 +192,15 @@ data-linktoslide="next"
 			data-easing="easeOutExpo"
 			data-endspeed="300"
 			style="z-index: 4"><a class="btn btn-large btn-icon-right with-icon button-hover btn-green radius-30px ui--animation" href="login.php" style="">Join Us <strong>Now!</strong><span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-caret-right"></i></span></a> 
-		</div>
+		</div>-->
 
 
 		
 	</li>
-	<!-- SLIDE  -->
-	<li data-transition="papercut,3dcurtain-horizontal,3dcurtain-vertical,flyin,turnoff,cubic" data-slotamount="7" data-masterspeed="300" >
-		<!-- MAIN IMAGE -->
-		<img src="images/dummy.png"  alt="bg-3" data-lazyload="images/bg-5.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-
-		<!-- LAYER NR. 1 -->
-		<div class="tp-caption tp-fade"
-			data-x="607"
-			data-y="26" 
-			data-speed="300"
-			data-start="500"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 2"><img src="images/Matrixp_plan.png" alt="">
-		</div>
-
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption caption-primary tp-fade"
-			data-x="0"
-			data-y="40" 
-			data-speed="300"
-			data-start="800"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 3">Complete 24 Business <br>
-<strong>Matric Circles (BMC) </strong>
-		</div>
-
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption caption-white-background tp-fade"
-			data-x="0"
-			data-y="140" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 4">and enjoy these Rewards
-		</div>
-
-		<!-- LAYER NR. 4 -->
-		<div class="tp-caption caption-long-text tp-fade"
-			data-x="0"
-			data-y="210" 
-			data-speed="300"
-			data-start="1400"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 5"><i class="ui--icon fontawesome-ok icon-inline-block" style="font-size: 18px;  width: 22px;  height: 22px;  color: #169fe6 !important;  margin-right: 5px;"></i> <span style="margin-left:5px"><strong>Full Circle Completion Reward</strong> which is 2 times the<br> total amount of commission earned in a circle Compatible</span>
-
-		</div>
-
-
-		<!-- LAYER NR. 5 -->
-		<div class="tp-caption caption-long-text tp-fade"
-			data-x="0"
-			data-y="270" 
-			data-speed="300"
-			data-start="1700"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 6"><i class="ui--icon fontawesome-ok icon-inline-block" style="font-size: 18px;  width: 22px;  height: 22px;  color: #169fe6 !important;  margin-right: 5px;"></i> <span style="margin-left:5px"><strong>Brand New Laptop</strong> Pre-loaded with all the applications<br> you will require in running your <strong>online business </strong></span>
-
-		</div>
-
-		<!-- LAYER NR. 6 -->
-		<div class="tp-caption caption-long-text tp-fade"
-			data-x="0"
-			data-y="330" 
-			data-speed="300"
-			data-start="2000"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 7"><i class="ui--icon fontawesome-ok icon-inline-block" style="font-size: 16px;  width: 22px;  height: 22px;  color: #169fe6 !important;  margin-right: 5px;"></i> <span style="margin-left:5px">You can Earn between <strong>$3000 to $25000</strong> Total <strong>Commission </strong> <br>depending on the Subscription Package you choose</span>
-
-		</div>
-
-		
-	</li>
-	<!-- SLIDE  -->
-	<li data-transition="slidevertical" data-slotamount="7" data-masterspeed="300" >
-		<!-- MAIN IMAGE -->
-		<img src="images/dummy.png"  alt="bg-3" data-lazyload="images/bg-3.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-
-<div class="tp-caption tp-fade"
-			data-x="0"
-			data-y="70" 
-			data-speed="300"
-			data-start="500"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 2"><img src="images/banner-img.png" alt="">
-		</div>
-
-		<!-- LAYER NR. 1 -->
-		<div class="tp-caption caption-primary tp-fade str col-grn"
-			data-x="720"
-			data-y="105" 
-			data-speed="300"
-			data-start="800"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			data-endeasing="easeOutBack"
-			style="z-index: 2">What is your <strong><br>
-dream Online Business?</strong> 
-            </div>
-
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption caption-white-background tp-fade str"
-			data-x="720"
-			data-y="205" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 3">We will build it for you
-		</div>
-
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption caption-white-background tp-fade str"
-			data-x="720"
-			data-y="265" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 3">At the end of your <strong>BMC</strong>
-		</div>
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption caption-white-background tp-fade str  col-text1"
-			data-x="720"
-			data-y="325" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 3">24 circles 
-		</div>
-	</li>
-	<!-- SLIDE  -->
-	<li data-transition="fade,slidehorizontal,slidevertical" data-slotamount="7" data-masterspeed="300" >
-		<!-- MAIN IMAGE -->
-		<img src="images/dummy.png"  alt="bg-3" data-lazyload="images/bg-4.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-
-<div class="tp-caption tp-fade"
-			data-x="720"
-			data-y="26" 
-			data-speed="300"
-			data-start="500"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 2"><img src="images/banner-img2.png" alt="">
-		</div>
-
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption caption-primary tp-fade str col-grn"
-			data-x="0"
-			data-y="135" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 4"><span>Subscribe to any of the amazing packages</span>
-		</div>
-
-
-		<!-- LAYER NR. 5 -->
-		<div class="tp-caption caption-white-background sfl"
-			data-x="0"
-			data-y="225" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 4">and still enjoy commissions from referring other referrers<br>
- who wish to join other subscription packages
-
-		</div>
-
-		<!-- LAYER NR. 6 -->
-		<div class="tp-caption caption-white-background sfl"
-			data-x="0"
-			data-y="300" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 4"><span style="color: #9c5d90;">Commissions spreads in both primary and secondary circles.</span>
-		</div>
-
-		<!-- LAYER NR. 7 -->
-		
-	</li>
-
-    
-    
-    <li data-transition="fade" data-slotamount="7" data-masterspeed="300" >
-		<!-- MAIN IMAGE -->
-		<img src="images/dummy.png"  alt="bg" data-lazyload="images/bg1.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-
-		<!-- LAYER NR. 1 -->
-		<div class="tp-caption tp-fade"
-			data-x="60"
-			data-y="20" 
-			data-speed="300"
-			data-start="500"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 2"><img src="images/business-plan.png" alt="">
-		</div>
-
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption caption-white-background tp-fade str tp-resizeme"
-			data-x="550"
-			data-y="105" 
-			data-speed="300"
-			data-start="800"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-data-linktoslide="next"
-			style="z-index: 3">Your Personal<strong>BMC Mentor</strong> </div>
-
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption caption-long-text tp-fade col-text"
-			data-x="550"
-			data-y="165" 
-			data-speed="300"
-			data-start="1100"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 4"><strong>Guides you through writing Your own very attractive</strong>
-		</div>
-
-		<!-- LAYER NR. 4 -->
-		<div class="tp-caption caption-primary tp-fade str"
-			data-x="550"
-			data-y="200" 
-			data-speed="300"
-			data-start="1400"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 5">And Comprehensive Business Plan 
-		</div>
-
-		<!-- LAYER NR. 5 -->
-		<div class="tp-caption tp-fade stb"
-			data-x="550"
-			data-y="280" 
-			data-speed="300"
-			data-start="1400"
-			data-easing="easeOutExpo"
-			data-endspeed="300"
-			style="z-index: 4"><a class="btn btn-large btn-icon-right with-icon button-hover btn-green radius-30px ui--animation" href="#" style="">Sign up <strong>Now!</strong><span class="button-icon"><i class="ui--icon ui--icon btn-icon icon-normal fontawesome-caret-right"></i></span></a> 
-		</div>
-
-
-		
-	</li>
-    
+	
+<?php
+}
+?>    
 </ul>
 <div class="tp-bannertimer"></div>	</div>
 </div>			
@@ -463,8 +220,9 @@ data-linktoslide="next"
 						dottedOverlay:"none",
 						delay:9000,
 						startwidth:1170,
-						startheight:400,
-						hideThumbs:200,
+						startheight:460,
+						//hideThumbs:200,
+						hideThumbs:10,
 						
 						thumbWidth:100,
 						thumbHeight:50,
@@ -493,8 +251,8 @@ data-linktoslide="next"
 						soloArrowRightVOffset:0,
 								
 						shadow:0,
-						fullWidth:"on",
-						fullScreen:"off",
+						//fullWidth:"on",
+						//fullScreen:"off",
 
 						stopLoop:"off",
 						stopAfterLoops:-1,
@@ -503,8 +261,8 @@ data-linktoslide="next"
 						
 						shuffle:"off",
 						
-						autoHeight:"off",						
-						forceFullWidth:"off",						
+						//autoHeight:"off",						
+						//forceFullWidth:"off",						
 												
 												
 						hideThumbsOnMobile:"off",
@@ -525,14 +283,16 @@ data-linktoslide="next"
 			</script>
 			
 			<!-- END REVOLUTION SLIDER --></div>
-
+<?php
+}
+?>
 
 
       <style>.full-org-box{ background:#ff3300; margin-bottom:20px; margin-top:0;}
 .wht-box{ background:#fff; margin:0px 30px 30px 30px;}
 </style>
 <?php
-$mhpsection = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='1'"));
+$mhpsection = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='1' AND display_status=1"));
 if(!empty($mhpsection))
 {
 ?>
@@ -568,299 +328,249 @@ if(!empty($mhpsection))
 }
 ?>
 <div id="page-content" class="no-sidebar-layout">
-<div class="container"><div id="the-content">
-
+<div class="container">
+    <div id="the-content">
+<?php
+$mhpsection2 = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='2' AND display_status=1"));
+if(!empty($mhpsection2))
+{
+?>
 <div class="fullwidth-container">
-<p><img src="images/sec-img.jpg" width="1280" height="400" alt="img"></p></div>
+    <p><img src="admin/homepage_image/<?=$mhpsection2['image']?>" width="1280" height="400" alt="img"></p></div>
 
 <div  class="ui--space clearfix" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:null}}}"></div>
 
 
-<h2 class="ui--animation " style="text-align: center; color: #ff5c1c !important; margin-bottom: 6px; "><strong>KEY BUSINESS SYSTEM FEATURES</strong></h2><h4 class="ui--animation " style="text-align: center; ">A digital business system that includes all the marketing, products, systems and support you need to succeed online.</h4>
-<div  class="ui--divider ui--animation clearfix ui--divider-solid-line" style="margin-top: 40px;  margin-bottom: 40px;"></div><div  class="ui--animation-in make--fx--fadein-btt ui--pass clearfix" data-fx="fx--fadein-btt" data-delay="200" data-start-delay="0"><div class="ui-row row">
- <div   class="ui-column span4"><div  class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i class="ui--icon fontawesome-tint icon-inline-block" style="font-size: 32px;  width: 36px;  height: 36px;"></i></span><div  class="ui--icon-box-content ui--animation"><h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect"><span >STEP BY STEP MODULAR TRAINING</span></h3><div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect"><p>Our training program provides individuals and small business owners the opportunity to quickly start or grow a profitable online business venture that can be run from anywhere in the world. All of our modules are designed as hands-on and you will benefit vastly from the support of the community and a personal business coach as you progress through the system. At each step you will complete actions that that take your business, mindset and online presence to the next level - putting you in a position to start profiting as quickly as possible.</p>
-<p><a href="/features/">Take a tour →</a></p>
-</div></div></div></div> 
+<h2 class="ui--animation " style="text-align: center; color: #ff5c1c !important; margin-bottom: 6px; "><strong><?=$mhpsection2['title']?></strong></h2><h4 class="ui--animation " style="text-align: center; "><?=$mhpsection2['sub_title']?></h4>
+<div  class="ui--divider ui--animation clearfix ui--divider-solid-line" style="margin-top: 40px;  margin-bottom: 40px;"></div><div  class="ui--animation-in make--fx--fadein-btt ui--pass clearfix" data-fx="fx--fadein-btt" data-delay="200" data-start-delay="0">
+    
+ 
+<?php
+$keyV2Q = mysql_query("select * from manage_homepage_key_value WHERE section_id='".$mhpsection2['id']."'");
+while($hkv = mysql_fetch_array($keyV2Q)){
+    $hkvArray[] = $hkv;
+}
+if(!empty($hkvArray))
+{
+    $threepisArr = array_chunk($hkvArray, 3);
+    foreach ($threepisArr as $threepis){    
+?>
+    <div class="ui-row row">
+  <?php
+  $ic = 0;
+  foreach ($threepis as $value){
+      $ic++;
+      if($ic==1){
+          $icpic = '<i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-tint icon-inline-block"></i>';
+      }
+      else if($ic==2){
+          $icpic = '<i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-asterisk icon-inline-block"></i>';
+      }
+      else if($ic==3){
+          $icpic = '<i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-magic icon-inline-block"></i>';
+      }
+      else if($ic==4){
+          $icpic = '<i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-laptop icon-inline-block"></i>';
+      }
+      else if($ic==5){
+          $icpic = '<i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-beaker icon-inline-block"></i>';
+      }
+      else {
+          $icpic = '<i style="font-size: 32px;  width: 36px;  height: 36px;" class="ui--icon fontawesome-globe icon-inline-block"></i>';
+      }
+  ?>
+ <div   class="ui-column span4">
+     <div  class="ui--icon-box position--left">
+         <span class="ui--icon-box-icon ui--animation"><?=$icpic;?></span>
+         <div  class="ui--icon-box-content ui--animation">
+             <h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect">
+                 <span ><?=$value['key'];?></span></h3>
+                 <div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect">
+                     <p><?=$value['value'];?></p>
+                     <p><a href="/features/">Take a tour →</a></p>
+                 </div>
+         </div>
+     </div>
+ </div> 
+<?php
+    }
+    ?>
+     </div>  
+    <div  class="ui--space clearfix" style="height: 12px;" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:&quot;12px&quot;}}}"></div>
+<?php        
+    }
+}
+?>
+ 
+ 
 
 
- <div   class="ui-column span4"><div  class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i class="ui--icon fontawesome-asterisk icon-inline-block" style="font-size: 32px;  width: 36px;  height: 36px;"></i></span><div  class="ui--icon-box-content ui--animation"><h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect"><span >PERSONAL BUSINESS SYSTEM COACH</span></h3><div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect"><p>One-on-one guidance from experts is what most people are missing when it comes to finding success online. Not just help, but help from people that know what they are talking about. We have business system coaches with knowledge in absolutely every aspect of online business that you can imagine - and they are here to help you. You will be allocated a personal business coach right after you submit your application to join the community.</p>
-<p><a href="/features/">Take a tour →</a></p>
-</div></div></div></div> 
-
- <div   class="ui-column span4"><div  class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i class="ui--icon fontawesome-magic icon-inline-block" style="font-size: 32px;  width: 36px;  height: 36px;"></i></span><div  class="ui--icon-box-content ui--animation"><h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect"><span >EXCLUSIVE PRIVATE COMMUNITY MEMBERSHIP</span></h3><div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect"><p>Jump into the Community and you are going to be welcomed with a helpful live chat going on 24/7/365. The BMC private community is a happening place with a lot of really cool, helpful, kind and knowledgeable people. If you need an instant answer to your question, chat is the place to go. If you want to have a live conversation about a particular topic or what to discuss a current challenge you're facing with fellow members, live chat or the private forum is the place to go.</p>
-<p><a href="/features/">Take a tour →</a></p>
-</div></div></div></div> 
-
-</div> 
-<div  class="ui--space clearfix" style="height: 12px;" data-responsive="{&quot;css&quot;:{&quot;height&quot;:{&quot;phone&quot;:null,&quot;tablet&quot;:null,&quot;widescreen&quot;:&quot;12px&quot;}}}"></div><div class="ui-row row">
- <div   class="ui-column span4"><div  class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i class="ui--icon fontawesome-laptop icon-inline-block" style="font-size: 32px;  width: 36px;  height: 36px;"></i></span><div  class="ui--icon-box-content ui--animation"><h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect"><span >WEEKLY MASTER MARKETING TRAINING</span></h3><div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect"><p>You won't just get "gold nuggets" of marketing training when you sign in for these weekly webinars, you'll literally gain life altering skills and tactics from every training. The leaders who run our training's are all achieving extraordinary results, and they tell you exactly how they are getting those results during these high energy and entertaining calls. Your mind will expand, and you will begin to realise you already have everything you need to go on and start building your ultimate lifestyle business with all of us here at BMC.</p>
-<p><a href="/features/">Take a tour →</a></p>
-</div></div></div></div> 
-
- <div   class="ui-column span4"><div  class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i class="ui--icon fontawesome-beaker icon-inline-block" style="font-size: 32px;  width: 36px;  height: 36px;"></i></span><div  class="ui--icon-box-content ui--animation"><h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect"><span >DIGITAL BUSINESS LOUNGE ACCESS</span></h3><div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect"><p>There are many services that are critical to running a successful and scalable business online, from websites and web hosting, to campaign tracking and list building/customer acquiring tools being integral components. Whatever your needs, the Digital Business Lounge facilitates the creation and expansion of your Internet business and we make this simple for even the most technically challenged with our easy-to-use DBL platform!</p>
-<p><a href="/features/">Take a tour →</a></p>
-</div></div></div></div> 
-
- <div   class="ui-column span4"><div  class="ui--icon-box position--left"><span class="ui--icon-box-icon ui--animation"><i class="ui--icon fontawesome-globe icon-inline-block" style="font-size: 32px;  width: 36px;  height: 36px;"></i></span><div  class="ui--icon-box-content ui--animation"><h3 class="ui--icon-box-title ui--animation text-left" data-fx="fx--no-effect"><span >EARN WHILE YOU LEARN OPPORTUNITY</span></h3><div  class="ui--animation ui--icon-box-text text-left" data-fx="fx--no-effect"><p>At BMC Network we offer one of the most profitable and simple to follow 'earn while you learn' affiliate marketing opportunities in the world, where you can benefit from selling life changing business e-learning products and get paid life changing commissions. We have some of the most advanced affiliate systems and technology available and we are just beginning to scratch the surface! What you will discover is without a doubt one of the most lucrative, fun and exciting opportunities on the Internet. Period!
-</p>
-<p><a href="/features/">Take a tour →</a></p>
-</div></div></div></div> 
-
-</div> 
 </div>
-
+<?php
+}
+?>
 <p>&nbsp;</p>
 <hr>
+<?php
+$mhpsection3 = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='3' AND display_status=1"));
+if(!empty($mhpsection3))
+{
+?>
+<h2 class="ui--animation " style="text-align: center; color: #ff5c1c !important; margin-bottom: 6px; "><strong><?=$mhpsection3['title']?></strong></h2>
+<?=$mhpsection3['description']?>
+<?php
+}
+?>
 
-<h2 class="ui--animation " style="text-align: center; color: #ff5c1c !important; margin-bottom: 6px; "><strong>WHO EXACTLY IS THE BMC NETWORK FOR?</strong></h2>
-
-<p>Firstly you need to understand that anyone who takes consistent action and works hard can succeed and profit online. This includes people who have never owned a business before and/or have no idea where to start.</p>
-<p>This is because we can show you business models such as affiliate marketing where you can profit from selling other peoples products to a global market, with over two billion people online, 24 hours per day, 7 days per week, 365 days a year!</p>
-<p>we have shown hundreds of people time and time again how to lay the foundation for a new business where they could become self sufficient at making money online. The people who we have seen succeed are:</p>
-<div class="row">
-<div class="span4">
-
-<ul class="ui--list list-font-icon parent-1">
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i> People who are not fulfilled with their job</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i >People who hate their boss</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i> Individuals simply looking for extra income</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i> Work at home parents</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i> People who want to change their life path</li>
-
-	</ul>    </div>
-
-<div class="span4">
-<ul class="ui--list list-font-icon parent-1">
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i> Unemployed/were hit hard by the global recession</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i> Retired veterans</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	Grandparents</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	Affiliate marketers</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	People with no existing products or business</li>
-</ul>
-</div>
-    
-<div class="span4">
-    <ul class="ui--list list-font-icon parent-1">
-
-
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	Network marketers</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	Online business owners</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	College and university students</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	Bankers, lawyers, doctors</li>
-<li class="child-1 total-3 fx--fadein-ltr ui--animation-fire" delay="1600"><i class="list-icon 14px fontawesome-ok"></i>	Offline business owners</li>
-</ul>
-</div>
-</div>
 
       
 <div class="clear"></div>
 	
-        <div id="section-cr4zq" class="fullwidth-container ui--section clearfix inner-shadow-2 section-cr4zq" style="margin-top: 30px;  margin-bottom: 0px;  padding-top: 40px;  padding-bottom: 22px;"><div class="container"><div class="ui--title ui--animation ui--title-bordered text-left"><div class="ui--title-holder"><h3 class="ui--title-text"> Featured <strong>Online Businesses</strong> <a class="btn btn-small btn-icon-left btn-secondary muted ui--animation" href="#" style="margin-left: 14px;  margin-right: 0px;  margin-top: 0px;  margin-bottom: 0px;">all projects</a> </h3><div class="ui--title-borders ui--title-border-left"></div><div class="ui--title-borders ui--title-border-right"></div></div></div><div  class="ui--animation-in make--fx--caption-right ui--pass clearfix" data-fx="fx--caption-right" data-delay="250" data-start-delay="0"><div class="portfolio-container-wrapper ui--pass" data-layout="carousel" data-columns="3"><div id="portfolio-n1eei" class="portfolio-container layout--carousel clearfix"><div class="ui--carousel clearfix" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;FALSE&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;arrows&quot;:true,&quot;rotate_time&quot;:0,&quot;animate&quot;:true}"><div class="slides"><div class="ui-row row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img2.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Drop Shipping</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Drop shipping is a retail method in which you don't keep products in stock. Instead, you partner with a wholesale supplier that stocks its own inventory - you transfer customer orders and shipment details to them, and they ship the goods directly to the customer.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
+        <div id="section-cr4zq" class="fullwidth-container ui--section clearfix inner-shadow-2 section-cr4zq" style="margin-top: 30px;  margin-bottom: 0px;  padding-top: 40px;  padding-bottom: 22px;">
+            <div class="container">
+                <div class="ui--title ui--animation ui--title-bordered text-left">
+                    <div class="ui--title-holder">
+                        <h3 class="ui--title-text"> Featured <strong>Online Businesses</strong> 
+                            <a class="btn btn-small btn-icon-left btn-secondary muted ui--animation" href="online-business.php" style="margin-left: 14px;  margin-right: 0px;  margin-top: 0px;  margin-bottom: 0px;">all projects</a> 
+                        </h3>
+                        <div class="ui--title-borders ui--title-border-left"></div>
+                        <div class="ui--title-borders ui--title-border-right"></div>
+                            
+                    </div>
+                        
+                </div>
+                <div  class="ui--animation-in make--fx--caption-right ui--pass clearfix" data-fx="fx--caption-right" data-delay="250" data-start-delay="0">
+                    <div class="portfolio-container-wrapper ui--pass" data-layout="carousel" data-columns="3">
+                        <div id="portfolio-n1eei" class="portfolio-container layout--carousel clearfix">
+                            <div class="ui--carousel clearfix" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;FALSE&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;arrows&quot;:true,&quot;rotate_time&quot;:0,&quot;animate&quot;:true}">
+                                <div class="slides">
+                                <?php
+                                $proQ = mysql_query("select * from manage_projects WHERE project_type=3 AND display_status=1");
+                                while($proj = mysql_fetch_array($proQ)){
+                                    $projects[] = $proj;
+                                }
+                                if(!empty($projects))
+                                {
+                                    $projectsArr = array_chunk($projects, 3);
+                                    foreach ($projectsArr as $projects)
+                                    {
+                                ?>  
+                                    <div class="ui-row row">
+                                    <?php
+                                    foreach ($projects as $project)
+                                    {
+                                     $proImgQ = mysql_query("select * from manage_projects_images WHERE project_id='".$project['id']."' AND status=1 LIMIT 1");
+                                     $proImg = mysql_fetch_array($proImgQ)
+                                    ?>
+                                    <div   class="ui-column span4">
+                                        <div class="ui--block ui--content-item ui--pass ui--animation">
+                                            <div  class="ui--content-box ui--box ui-row">
+                                                <div class="ui--content-box-header">
+                                                    <div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;">
+                                                        <a class="ui--content-box-link" href="project-detail-page.php?id=<?=$project['id']?>">
+                                                            <div class="ui--content-box-image-default">
+                                                                <img  class="ui--content-box-image" src="admin/project_image/<?=$proImg['image']?>" alt="" title=""/>
+                                                            </div>
+                                                            <div class="ui--content-box-overlay">
+                                                                <div class="ui--content-box-overlay-background"></div>
+                                                                <div class="center">
+                                                                    <span class="btn btn-grey ui--center-vertical">
+                                                                        <span class="ui--content-box-overlay-button-text">Details</span>
+                                                                            
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <a class="ui--content-box-link" href="project-detail-page.php?id=<?=$project['id']?>">
+                                                        <div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center">
+                                                            <h5 class="ui--content-box-title-text"><?=$project['title']?></h5>
+                                                        </div>
+                                                    </a>
+                                                    <div class="ui--content-box-content">
+                                                        <div class="ui--content-box-content-text">
+                                                            <p><?=$project['short_desc']?></p>
+                                                            <p class="button"><a href="project-detail-page.php?id=<?=$project['id']?>">Read More</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
+                                                    <img src="images/shadow-8.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div> 
+                                   <?php } ?>       
+                                </div> 
+                                <?php } 
+                                }
+                                ?>    
 
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img3.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="http://envision.wptation.com/works/audio-player/"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Picture Chat</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Imagine a mobile apps where you combine instagram and whatsapp the two mst powerful mobile apps business. Picturechat will get you right above these competitors</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img4.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Creative Businesses</h5></div></a><div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>This is a premium online business that connects creative talents with potential investors or business partners. do you have what it take to attract investors? come and list your innovations and inventions at creativebusinesses.com. this is the idea</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-</div> 
-<div class="ui-row row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img5.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Shop 4 Me</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Need someone to run your errands? Here's an app for that. This mobile apps you can find professional errand agents who can shop great stuff for a little fees. You can ask the agent to shop for you from your specified store or any store of your choice. This business module is suitable for busy folks and old ages around your area.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img6.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Smart Ads</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Smart Ads provides a web platform for advertisers and ads publishers. The high traffic websites (publishers) can make extra money by placing paid advertisement on their website while the advertisers pay for their ads placement</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img7.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Software Marketplace</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>The software industry is a 300 Billion dollar industry generating massive amounts of revenue every day. It's a money-making machine, You can start a software Marketplace where buyers and sellers are connected while you make commission off each sales</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-</div>
-
-
-<div class="ui-row row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img8.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">My Counsellor</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>The most difficult phase of 
-life is not when no one 
-understands you; It is when 
-you don't understand 
-yourself.Start an online 
-Counselling business where you 
-host professional counselors 
-from around the world. Help 
-make adifference in other 
-peoples' lives! Through 
-professional advices while you 
-get commission for every 
-counselling time sold..</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img9.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">My Business Partner</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Entrepreneurs who wants to 
-expand their business across 
-the world are looking for 
-trusted business partners to 
-represent them in different 
-countries. My business 
-Partners is a premium online 
-business that connects 
-potential business partners in 
-business partnership. </p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-<div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img10.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Translation Guru</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>General Translation is a most demanded services. You can have an online business where people pay you to translate their documents or business transaction. Submit your profile to various embassies and sitback to answer your business calls</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div>
-  
-
-</div>
-
-<div class="ui-row row">
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img11.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Franchise Investment Brokage</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Many investors dont know where to invest their money. You can laverage on this opportunity by setting up an online Franchise Investment Brokage service where you simply research on local and international franchise opportunities and look for potential buyers and make 10percent commission off from every franchise you sell</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
-<div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img12.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">E-Learning Social Network</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Imagine a social network like facebook but specially built with e-learning functionalities like e-library, online course of different categories targeting students from high school,universities and students seeking for adult education. Students can engage in a group learning enviroment while interacting in a social networking, making new friends of like minds and sharing knowledge.</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div>
-<div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img13.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Discount Card</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Put up an online service where you sell a discount card to your customers, they can use this card to get discount at local stores, restaurant, laundries etc. You negotiate a discount percentage with both online and offline businesses and promise them free advertisement on your website. You make money from selling the discount cards and also reserving some discount percentage to be paid back to you from your partners</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div>
-  
-
-</div>
-
-
-<div class="ui-row row">
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img14.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Solicitors Venue</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p><strong>FOR ALL YOUR LEGAL SOLUTIONS</strong><br>
-
-Whatever your legal issue, Solicitors Venue have the people that can achieve success for you. All you need to tackle any legal issue is right here at the stroke of a keyboard. Whether it be a family or make a will, or internet defamation etc. We can team you up with the Lawyers that can help!</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div></div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-
- <div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img15.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Getting paid for webinars</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Do you have something worth sharing online that you think others would pay to see? Creating a webinar that allows you to pass your knowledge or skills on to others will allow you to earn a living or at least supplement your income. Make money conducting Webinars with BMC networks</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div> 
-        
-<div   class="ui-column span4"><div class="ui--block ui--content-item ui--pass ui--animation"><div  class="ui--content-box ui--box ui-row"><div class="ui--content-box-header"><div class="ui--content-box-media effect--fade type--default clearfix" style="padding-bottom: 56.25%;"><a class="ui--content-box-link" href="#"><div class="ui--content-box-image-default"><img  class="ui--content-box-image" src="images/feature-img1.jpg" alt="" title=""/></div><div class="ui--content-box-overlay"><div class="ui--content-box-overlay-background"></div><div class="center"><span class="btn btn-grey ui--center-vertical"><span class="ui--content-box-overlay-button-text">Details</span></span></div></div></a></div><a class="ui--content-box-link" href="#"><div class="ui--content-box-title ui--gradient ui--gradient-grey on--hover clearfix text-center"><h5 class="ui--content-box-title-text">Daily Booking & Reservation</h5></div></a>
- <div class="ui--content-box-content"><div class="ui--content-box-content-text"><p>Daily Booking & Reservation is am automated and diversified web booking system that enable users to book for all kind of bookable events and activities</p>
-<p class="button"><a href="">Read More</a></p>
-</div></div>
- </div></div>
-			<div class="ui--shadow ui--shadow-type-8 ui--shadow-abs ui--shadow-reset clearfix">
-				<img src="images/shadow-8.png" alt="" />
-			</div>
-		</div></div>
-
-</div>
 
  
 </div></div></div></div></div></div></div><!-- /.fullwidth-container -->
-
+<?php
+$mhpsection4 = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='4' AND display_status=1"));
+if(!empty($mhpsection4))
+{
+?>
 <div id="section-cr4zq1" class="fullwidth-container ui--section clearfix" style="margin-top: 0px;  margin-bottom: 60px;  padding-top: 180px;  padding-bottom: 120px;">
 
 <div class="container">
 
-<div class="ui--tagline-box-wrapper ui--animation clearfix" style="margin-bottom: 30px;"><div id="tagline-1" class="ui--tagline-box ui-row clearfix ui--tagline-box-custom-color radius-3px"><h4 class="ui--animation " style="text-align: center; line-height:30px ">Join other Prospective BMC Entrepreneurs And Get Access to Our Entire Collection of Online Business Ideas, Then you can Choose the one you want us to build for you after your successful Completion of 24 BMC</h4>
+<div class="ui--tagline-box-wrapper ui--animation clearfix" style="margin-bottom: 30px;"><div id="tagline-1" class="ui--tagline-box ui-row clearfix ui--tagline-box-custom-color radius-3px"><h4 class="ui--animation " style="text-align: center; line-height:30px "><?=$mhpsection4['title'];?></h4>
 
-<p style="text-align:center"><a href="register.html" class="btn btn-dark-red">Sign Up Today</a></p>
+        <p style="text-align:center"><a href="register.php" class="btn btn-dark-red">Sign Up Today</a></p>
 
 </div></div>
 </div>
 
 </div>
-
+<?php
+}
+?>
 <div class="ui-row row">
- <div class="ui-column span6"><div  class="ui--animation-in make--fx--caption-left ui--pass clearfix" data-fx="fx--caption-left" data-delay="250" data-start-delay="0"><div class="ui--title ui--animation ui--title-bordered text-left"><div class="ui--title-holder"><h3 class="ui--title-text">4 Benefit of <strong>BMC Network</strong></h3><div class="ui--title-borders ui--title-border-left"></div><div class="ui--title-borders ui--title-border-right"></div></div></div><div  class="ui--accordion ui--box ui--animation clearfix"><div  class="ui--accordion-item ui--gradient ui--gradient-grey on--hover ui-row first-item ui--accordion-state-closed accordion-2-1"><a href="#accordion-2-1" class="ui--accordion-item-title heading"><div><span class="ui--accordion-item-title-text">1. Extra Income</span></div></a><div class="ui--accordion-item-content"> <div class="auto-format ui--animation"><p>In BMC Network the least amount you make after completing your 24 circles is $3,592 depending on your subscription plan, you could make more than $13,000 when you subscribe to BMC 3 and even more when you subscribe to all the 3 packages. These extra income comes with so many other rewards. See packages for more details. </p>
-
-<p>You can also earn extra income when you refer a website design and development project, we will give you a custom quote depending on the project requirement and also make sure that you make a substantial profit. Chances are there are times when you meet people who are looking for a reliable company to do their website jobs, we dont want you to loose such opportunity to make extra income so we have provided a feature in your members back office called "custom work zone" where you can submit all your website requirement and receive instant quote.</p>
-</div> </div></div><div  class="ui--accordion-item ui--gradient ui--gradient-grey on--hover ui-row ui--accordion-state-opened accordion-2-2"><a href="#accordion-2-2" class="ui--accordion-item-title heading"><div><span class="ui--accordion-item-title-text">2.  Meet New people </span></div></a><div class="ui--accordion-item-content"> <div class="auto-format"><p>BMC network is not only about making money and having your own business establish but also a social interaction amongst like minds, we have interesting chat rooms where you can meet new friends from around the world and enhance your business opportunities. When you join BMC Network you join a network of business contacts, they says iron sharpens iron, when you share business ideas there are more you can get from it in terms of business expansion and collaboration.</p>
-</div> </div></div><div  class="ui--accordion-item ui--gradient ui--gradient-grey on--hover ui-row ui--accordion-state-closed accordion-2-3"><a href="#accordion-2-3" class="ui--accordion-item-title heading"><div><span class="ui--accordion-item-title-text">3. Business Expansion Loan</span></div></a><div class="ui--accordion-item-content"> <div class="auto-format ui--animation"><p>When you subscribe in BMC2 or BMC3 Package, you will have an access to a business expansion Loan within $10 000 to $100 000 dollars depending on your performance after the first 6 months of launching your online business. This loan is an interest free loan, you only pay back what we lend you with no extra stress attached considering our main aim is to see our members succeed, when you succeed, we succeed and you  become our reference point of success.</p>
-</div> </div></div><div  class="ui--accordion-item ui--gradient ui--gradient-grey on--hover ui-row last-item ui--accordion-state-closed accordion-2-4"><a href="#accordion-2-4" class="ui--accordion-item-title heading"><div><span class="ui--accordion-item-title-text">4. Self Made</span></div></a><div class="ui--accordion-item-content"> <div class="auto-format ui--animation"><p>BMC network will give you a one-of-a-kind opportunity to be self employed and also become an employer. When we set up your business you will have full control over the business. Our primary responsibility is to train and prepare YOU for the challenging work that lies ahead till you make your first $1000 from the business. We expect that you will take on significant responsibility, including client contact. We will provide you with the guidance that you will need to develop expertise in your area and build long-lasting client relationships
-In BMC Network, we succeed when we help our members succeed</p>
-</div> </div></div></div></div></div> 
-
+<?php
+$mhpsection5 = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='5' AND display_status=1"));
+if(!empty($mhpsection5))
+{
+?>
+ <div class="ui-column span6">
+     <div  class="ui--animation-in make--fx--caption-left ui--pass clearfix" data-fx="fx--caption-left" data-delay="250" data-start-delay="0">
+         <div class="ui--title ui--animation ui--title-bordered text-left">
+             <div class="ui--title-holder"><h3 class="ui--title-text"><strong><?=$mhpsection5['title']?></strong></h3>
+                 <div class="ui--title-borders ui--title-border-left"></div>
+                 <div class="ui--title-borders ui--title-border-right"></div>
+             </div>
+         </div>
+         <div  class="ui--accordion ui--box ui--animation clearfix">
+            <?php
+            $keyV2Q = mysql_query("select * from manage_homepage_key_value WHERE section_id='".$mhpsection5['id']."'");
+            $ben=0;
+            while($hkv = mysql_fetch_array($keyV2Q)){
+                //$hkvArray[] = $hkv;
+                $ben++;
+            ?>
+            
+             <div  class="ui--accordion-item ui--gradient ui--gradient-grey on--hover ui-row  ui--accordion-state-closed accordion-2-<?=$ben;?>">
+                 <a href="#accordion-2-<?=$ben;?>" class="ui--accordion-item-title heading">
+                     <div><span class="ui--accordion-item-title-text"><?=$ben;?>. <?=$hkv['key'];?></span></div>
+                 </a>
+                 <div class="ui--accordion-item-content"> 
+                     <div class="auto-format ui--animation">
+                        <p><?=$hkv['value'];?></p>
+                     </div> 
+                 </div>
+             </div>
+             <?php
+            }
+            ?>
+            </div>
+     </div>
+ </div> 
+<?php
+}
+?>
  <div class="ui-column span6"><div class="ui--animation-in make--fx--caption-right ui--pass clearfix" data-fx="fx--caption-right" data-delay="250" data-start-delay="0"><div class="ui--title ui--animation ui--title-bordered text-left"><div class="ui--title-holder"><h3 class="ui--title-text">Recent <strong>News</strong></h3><div class="ui--title-borders ui--title-border-left"></div><div class="ui--title-borders ui--title-border-right"></div></div></div><div id="blog-1" class="ui--blog ui--blog-wrapper ui--pass" data-layout="mini" data-columns="2"><div class="ui--carousel clearfix" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;FALSE&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;arrows&quot;:true,&quot;rotate_time&quot;:0,&quot;animate&quot;:true}"><div class="slides"><div class="ui-row row">
  <div class="ui-column span6"><div class="ui--blog-item ui--animation ui--accent-gradient-hover-parent clearfix layout--mini-carousel"><div class="ui--blog-side ui--blog-date ui--accent-gradient-hover-parent ui--box"><h3><span class="ui--blog-date-day ui--accent-gradient-hover">21</span></h3><h6 class="ui--blog-date-month ui--gradient ui--gradient-grey"><span>Jul</span></h6></div><div class="ui--blog-content-wrapper"><div class="ui--blog-header"><h5 class="ui--blog-title"><a class="ui--blog-link" href="http://envision.wptation.com/social-media-composer-post/">Social Media &#8211; Composer Post</a></h5></div><div class="ui--blog-readmore more-link"><a class="btn btn-small btn-secondary muted" href="#">Read More</a></div></div></div></div> 
 
@@ -977,46 +687,43 @@ In BMC Network, we succeed when we help our members succeed</p>
 </div> 
 </div></div></div></div> 
 
+</div>
+<?php
+$mhpsection6 = mysql_fetch_array(mysql_query("select * from manage_homepage WHERE id='6' AND display_status=1"));
+if(!empty($mhpsection6))
+{
+?>
+<div  id="section-8wp3r" class="fullwidth-container ui--section clearfix section-8wp3r color--dark" style="margin-top: 42px;  margin-bottom: -12px;">
+    <div class="container">
+<h3 class="wht-txt"><?=$mhpsection6['title'];?></h3>
+
+<div  class="ui--animation-in make--fx--appear ui--pass clearfix" data-fx="fx--appear" data-delay="250" data-start-delay="0">
+    <div class="ui--client-list-wrapper ui--animation ui-row clearfix">
+        <div class="ui--client-list ui--box ui-row clearfix ui--carousel" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;1&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;rotate_time&quot;:0}">
+            <div class="slides">
+                <div class="ui-row row">
+                 <?php
+            $keyV6Q = mysql_query("select * from manage_homepage_key_value WHERE section_id='".$mhpsection6['id']."'");
+            //$ben=0;
+            while($hkv6 = mysql_fetch_array($keyV6Q)){
+                //$hkvArray[] = $hkv;
+                //$ben++;
+            ?>   
+                    <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="admin/homepage_image/<?=$hkv6['image']?>" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
+            <?php
+            }
+            ?>
+ 
 </div> 
-<div  id="section-8wp3r" class="fullwidth-container ui--section clearfix section-8wp3r color--dark" style="margin-top: 42px;  margin-bottom: -12px;"><div class="container">
-<h3 class="wht-txt">Our Partners</h3>
 
-<div  class="ui--animation-in make--fx--appear ui--pass clearfix" data-fx="fx--appear" data-delay="250" data-start-delay="0"><div class="ui--client-list-wrapper ui--animation ui-row clearfix"><div class="ui--client-list ui--box ui-row clearfix ui--carousel" data-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;auto_rotate&quot;:&quot;1&quot;,&quot;animation_loop&quot;:&quot;FALSE&quot;,&quot;rotate_time&quot;:0}"><div class="slides"><div class="ui-row row">
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-10.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-17.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-15.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-14.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
-</div> 
-<div class="ui-row row">
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-1.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-2.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-3.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-4.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
-</div> 
-<div class="ui-row row">
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-12.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-6.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-8.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
- <div   class="ui-column span3"><div class="ui--client ui--carousel-item"><img src="images/client-9.png" alt="" title="" class="ui--animation"></div><div class="vertical-divider"></div></div> 
-
-</div> 
 </div></div>
 			<div class="ui--shadow ui--shadow-type-8  clearfix">
 				<img src="images/shadow-8.png" alt="" />
 			</div>
 		</div></div></div></div><!-- /.fullwidth-container -->
-
+<?php
+}
+?>
 	</div></div><!-- /.container --></div><!-- /#page-content -->
 
       <!-- /#page-content -->

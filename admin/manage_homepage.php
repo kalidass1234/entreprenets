@@ -82,7 +82,7 @@ $cur_date=date('Y-m-d');
 		  var con=confirm("Do you want to change display status?"); 
 		   if(con==true)
 			   {
-				   var link="admin_main.php?page_number=31&id="+id+"&display_status="+status+"&action1=status";
+				   var link="admin_main.php?page_number=209&id="+id+"&display_status="+status+"&action1=status";
 				   document.location.href=link;
 			   }
 			else 
@@ -185,9 +185,9 @@ $cur_date=date('Y-m-d');
                         <?php } ?>	  
                       </td>
                       <!--<td><a href="admin_main.php?page_number=31&id=<?php echo $row_prod['id'];?>" >Enable Disable</a></td>-->
-                      <td><a href="admin_main.php?page_number=31&delete=1&id=<?php echo $row_prod['id'];?>" onClick="if(confirm('Do You Want To Delete')){return true;} else { return false;}"><img src="images/intext-close5.png"></a></td>
+                      <td><a href="admin_main.php?page_number=209&delete=1&id=<?php echo $row_prod['id'];?>" onClick="if(confirm('Do You Want To Delete')){return true;} else { return false;}"><img src="images/intext-close5.png"></a></td>
                       
-                      <td><a href="#myModal" onClick="showmaterialform(<?php echo $row_prod['id'];?>);"  data-toggle="modal"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button><!--<img src="images/edit.png">--></a>
+                      <td><a href="#myModal" onClick="showmaterialform('<?php echo $row_prod['id'];?>');"  data-toggle="modal"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button><!--<img src="images/edit.png">--></a>
                       </td>
                      <!-- cms_edit.php?delete=1&id=<?php echo $row_prod['id'];?>-->
                     </tr>

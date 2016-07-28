@@ -30,7 +30,7 @@ $cur_date=date('Y-m-d');
     <div class="matter">
       <div class="container">
 
-        <div> <a href="#myModal" class="btn btn-info" data-toggle="modal" onClick="showformmaterial('');">Add How It Works</a>
+        <div> <!--<a href="#myModal" class="btn btn-info" data-toggle="modal" onClick="showformmaterial('');">Add How It Works</a>-->
           <!-- Modal -->
             <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <script type="text/javascript" src="<?php echo SITE_URL; ?>admin/ckeditor/ckeditor.js"></script>
@@ -112,27 +112,6 @@ $cur_date=date('Y-m-d');
                            <input type="radio" id="display_status2" name="display_status" value="1" checked/>Yes
                            <input type="radio" id="display_status1" name="display_status" value="0" />No
                         </div>
-                        
-                        <div class="form-group">
-                          <label for="name">Third Content</label>
-                          <textarea class="form-control for-height" rows="3" id="editor21" name="third_desc" placeholder="Textarea"><?php echo $third_desc;?></textarea>
-                          <script type="text/javascript">
-                             // Replace the <textarea id="editor1"> with a CKEditor
-                            // instance, using default configuration.
-                            CKEDITOR.replace( 'editor21',
-                             {
-                                  filebrowserBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html',
-                                  filebrowserImageBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Images',
-                                  filebrowserFlashBrowseUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/ckfinder.html?type=Flash',
-                                  filebrowserUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                                  filebrowserImageUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                  filebrowserFlashUploadUrl : '<?php echo SITE_URL; ?>admin/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                  filebrowserWindowWidth : '1000',
-                                  filebrowserWindowHeight : '700'
-                             });
-                             </script>
-                        </div>
-
                    </div>
                     
                   </div>
@@ -147,7 +126,7 @@ $cur_date=date('Y-m-d');
          
         <div class="widget">
           <div class="widget-head">
-            <div class="pull-left">Member How It Works List</div>
+            <div class="pull-left">How It Works CMS</div>
             <div style='color:green;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if(isset($_REQUEST['msg'])){echo $_REQUEST['msg'];} ?></div>
             <div class="widget-icons pull-right"> <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> <a href="#" class="wsettings"><i class="fa fa-wrench"></i></a> <a href="#" class="wclose"><i class="fa fa-times"></i></a> </div>
             <div class="clearfix"></div>
@@ -158,8 +137,9 @@ $cur_date=date('Y-m-d');
                 <tr>
                   <th>S.no.</th>
                   <th>Title</th>
+                  <th>Sub Title</th>
                   <th>Display Status</th>
-		          <th>Delete</th>
+<!--		          <th>Delete</th>-->
                   <th>Edit</th>
                 </tr>
               </thead>
@@ -223,7 +203,7 @@ $cur_date=date('Y-m-d');
                     <tr>
                       <td><?php echo $sn;?></td>
                       <td><?php echo $row_prod['title'];?></td>
-                     <!-- <td><?php echo $row_prod['added_date'];?></td>-->
+                      <td><?php echo $row_prod['second_desc'];?></td>
                       <!--<td><?php echo $row_prod['binary_type1'];?></td>-->
                       <td>	   
 					  	<?php if(stripslashes($row_prod["display_status"])=='1'){?>
@@ -232,8 +212,8 @@ $cur_date=date('Y-m-d');
                         <a href="javascript:void(0);" onClick="return change_status(1,<?=$row_prod["id"]?>);"><img src="images/invisible.gif" border="0" width="25" height="25"></a>
                         <?php } ?>	  
                       </td>
-                      <!--<td><a href="admin_main.php?page_number=198&id=<?php echo $row_prod['id'];?>" >Enable Disable</a></td>-->
-                      <td><a href="admin_main.php?page_number=198&delete=1&id=<?php echo $row_prod['id'];?>" onClick="if(confirm('Do You Want To Delete')){return true;} else { return false;}"><img src="images/intext-close5.png"></a></td>
+                      
+<!--                      <td><a href="admin_main.php?page_number=198&delete=1&id=<?php echo $row_prod['id'];?>" onClick="if(confirm('Do You Want To Delete')){return true;} else { return false;}"><img src="images/intext-close5.png"></a></td>-->
                       
                       <td><a href="#myModal" onClick="showmaterialform(<?php echo $row_prod['id'];?>);"  data-toggle="modal"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button><!--<img src="images/edit.png">--></a>
                       </td>

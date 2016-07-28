@@ -1,14 +1,18 @@
 <?php
 include("header.php");
 include("pagination.php");
-$cur_date=date('Y-m-d');
-
 ?>
 <!-- Main content starts -->
+	
+    
 <div class="content">
   <!-- Sidebar -->
   <?php
     include("nav.php");
+    $tabq="";
+    $res_prod=$obj_query->query("*","package_CMS_tab","id='".$_REQUEST['id']."'");
+    $row_prod_T=$obj_query->get_all_row($res_prod);
+    if(!empty($row_prod_T)){
 	?>
   <!-- Sidebar ends -->
   <!-- Main bar -->
@@ -20,7 +24,8 @@ $cur_date=date('Y-m-d');
       <!-- Breadcrumb -->
       <div class="bread-crumb"> <a href="index.php"><i class="fa fa-home"></i> Home</a>
         <!-- Divider -->
-        <span class="divider">/</span> <a href="#" class="bread-current">Slider</a> </div>
+        <span class="divider">/</span> <a href="admin_main.php?page_number=156" class="bread-current">Package Tab</a> 
+        <span class="divider">/</span> <a href="#" class="bread-current"><?=$row_prod_T['title']?></a> </div>
       <div class="clearfix"></div>
     </div>
     <!-- Page heading ends -->
@@ -29,8 +34,8 @@ $cur_date=date('Y-m-d');
       
     <div class="matter">
       <div class="container">
-
-        <div> <a href="#myModal" class="btn btn-info" data-toggle="modal" onClick="showformmaterial('');">Add Slider</a>
+        <!-----add package------>
+        <div> <a href="#myModal" class="btn btn-info" data-toggle="modal" onClick="showformmaterial('');">Add More <?=$row_prod_T['title']?> Tab Content</a>
           <!-- Modal -->
             <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <script type="text/javascript" src="<?php echo SITE_URL; ?>admin/ckeditor/ckeditor.js"></script>
@@ -76,69 +81,29 @@ $cur_date=date('Y-m-d');
 			return false;
 		}
 	}
-	function change_status(status,id)
-	{
-		 
-		  var con=confirm("Do you want to change display status?"); 
-		   if(con==true)
-			   {
-				   var link="admin_main.php?page_number=28&id="+id+"&display_status="+status+"&action1=status";
-				   document.location.href=link;
-			   }
-			else 
-			   {
-				return false ;
-			   }
-		  
-	}
+	
 	</script>
               <form name="marketing_product" id="marketing_product12312" action="submit.php" method="post" enctype="multipart/form-data">
-          	  <input type="hidden" name="action" value="add_slider" />
+          	  <input type="hidden" name="action" value="add_packages_tab_content" />
+          	  <input type="hidden" name="tab_id" value="<?=$row_prod_T['id']?>" />
          	  <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Add Slider</h4>
+                    <h4 class="modal-title">Add <?=$row_prod_T['title']?> Content</h4>
                   </div>
-                  
                   <div class="modal-body">
-<!--                  	    <div class="form-group">
-                           <label for="name">First Line</label>
-                           <input class="form-control for-height" type="text" id="first_title" name="first_title" value="" />
-                           
-                        </div>
-                  	    <div class="form-group">
-                           <label for="name">Secont Line</label>
-                           <input class="form-control for-height" type="text" id="second_title" name="second_title" value="" />
-                           
-                        </div>
-                  	    <div class="form-group">
-                           <label for="name">Third Line</label>
-                           <input class="form-control for-height" type="text" id="third_title" name="third_title" value="" />
-                           
-                        </div>
-                  	    <div class="form-group">
-                           <label for="name">Link</label>
-                           <input class="form-control for-height" type="text" id="slider_link" name="slider_link" value="" />
-                           
-                        </div>-->
-
-                        <div class="form-group">
-                           <label for="name">Image</label>
-                           <input class="form-control for-height" type="file" id="image" name="image" value="" />
-                        </div>
-
-                  	    <div class="form-group">
-                           <label for="name">Display Status - </label>
-                           <input type="radio" id="display_status2" name="display_status" value="1" checked/>Yes
-                           <input type="radio" id="display_status1" name="display_status" value="0" />No
-                        </div>
-
+                      <div class="form-group">
+                          <label for="name">Key</label>
+                          <input class="form-control for-height" type="text" name="question" id="package_name" value="<?=$row['package_name']?>" required  />
+                      </div>
+                       <div class="form-group">
+                          <label for="name">Value</label>
+                          <input class="form-control for-height" type="text" name="value" id="total_price"  value="<?=$row['total_price']?>" />
+                       </div>     
                    </div>
-                    
-                  </div>
                   <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger" onclick="return binarypos();">Submit</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
                   </div>
                 </div>
               </div>
@@ -148,8 +113,7 @@ $cur_date=date('Y-m-d');
          
         <div class="widget">
           <div class="widget-head">
-            <div class="pull-left">Slider List</div>
-            <div style='color:green;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if(isset($_REQUEST['msg'])){echo $_REQUEST['msg'];} ?></div>
+            <div class="pull-left"><?=$row_prod_T['title']?> Content</div>
             <div class="widget-icons pull-right"> <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> <a href="#" class="wsettings"><i class="fa fa-wrench"></i></a> <a href="#" class="wclose"><i class="fa fa-times"></i></a> </div>
             <div class="clearfix"></div>
           </div>
@@ -158,9 +122,9 @@ $cur_date=date('Y-m-d');
               <thead>
                 <tr>
                   <th>S.no.</th>
-                  <th>Image</th>
-                  <th>Display Status</th>
-		          <th>Delete</th>
+                  <th>Key</th>
+                  <th>Value</th>
+                  <th>Delete</th>
                   <th>Edit</th>
                 </tr>
               </thead>
@@ -168,20 +132,8 @@ $cur_date=date('Y-m-d');
                 <?php
 				if(isset($_GET['delete']) && $_GET['delete']==1)
 				{
-					$mid=$_GET['id'];
-					$obj_query->query_execute("delete from manage_slider where id='$mid'");
-				}
-				
-				if(isset($_GET['action1']) && isset($_GET['id']))
-				{
-					if(isset($_GET['display_status']))
-					{
-						$status=$_GET['display_status'];
-					}
-
-					$sql_change = "UPDATE manage_slider set display_status='".$status."' WHERE id='".$_GET['id']."'";
-					$states2 = mysql_query($sql_change);
-
+					$mid=$_GET['did'];
+					$obj_query->query_execute("delete from package_CMS_tab_content where id='$mid'");
 				}
 				if(isset($_GET['page']) && $_GET['page']!='' && is_numeric($_GET['page']))
 				{
@@ -194,11 +146,11 @@ $cur_date=date('Y-m-d');
 				if(isset($_REQUEST['search']))
 				{
 					$query_string=http_build_query($_REQUEST);
-					$url='admin_main.php?page_number=28&'.$query_string;
+					$url='admin_main.php?page_number=210&id='.$row_prod_T['id'].'&'.$query_string;
 				}
 				else
 				{
-					$url='admin_main.php?page_number=28&'.$search_string;
+					$url='admin_main.php?page_number=210&id='.$row_prod_T['id'].'&'.$search_string;
 				}
 				//echo $current_page;
 				$pageno = $current_page;
@@ -212,29 +164,20 @@ $cur_date=date('Y-m-d');
 				}
 				else
 					$limit = " ";
-			  	$res_products_tol=$obj_query->query("*","manage_slider","1=1 ");
+			  	$res_products_tol=$obj_query->query("*","package_CMS_tab_content","tab_id=".$row_prod_T['id']);
 			  	$total_row=$obj_query->num_row($res_products_tol);
 			  	$pages = ceil($total_row/$per_page);
-                $res_prod=$obj_query->query("*","manage_slider","1=1 $limit");
+                $res_prod=$obj_query->query("*","package_CMS_tab_content","tab_id=".$row_prod_T['id']." $limit");
 				$sn=1;
 				while($row_prod=$obj_query->get_all_row($res_prod))
 				{
 				?>
                     <tr>
                       <td><?php echo $sn;?></td>
-                      <td><img src="slider_image/<?php echo $row_prod['image'];?>" width="50" height="50"></td>
-                     <!-- <td><?php echo $row_prod['added_date'];?></td>-->
-                      <!--<td><?php echo $row_prod['binary_type1'];?></td>-->
-                      <td>	   
-					  	<?php if(stripslashes($row_prod["display_status"])=='1'){?>
-                        <a href="javascript:void(0);" onClick="return change_status(0,<?=$row_prod["id"]?>);"><img border="0" src="images/visible.gif" width="25" height="25"></a>
-                        <?php } else { ?>
-                        <a href="javascript:void(0);" onClick="return change_status(1,<?=$row_prod["id"]?>);"><img src="images/invisible.gif" border="0" width="25" height="25"></a>
-                        <?php } ?>	  
-                      </td>
-                      <!--<td><a href="admin_main.php?page_number=28&id=<?php echo $row_prod['id'];?>" >Enable Disable</a></td>-->
-                      <td><a href="admin_main.php?page_number=28&delete=1&id=<?php echo $row_prod['id'];?>" onClick="if(confirm('Do You Want To Delete')){return true;} else { return false;}"><img src="images/intext-close5.png"></a></td>
-                      
+                      <td><?php echo $row_prod['question'];?></td>
+                      <td>$<?php echo $row_prod['value'];?></td>
+
+                      <td><a href="admin_main.php?page_number=210&id=<?=$row_prod_T['id'];?>&delete=1&did=<?php echo $row_prod['id'];?>" onClick="if(confirm('Do You Want To Delete')){return true;} else { return false;}"><img src="images/intext-close5.png"></a></td>
                       <td><a href="#myModal" onClick="showmaterialform(<?php echo $row_prod['id'];?>);"  data-toggle="modal"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button><!--<img src="images/edit.png">--></a>
                       </td>
                      <!-- cms_edit.php?delete=1&id=<?php echo $row_prod['id'];?>-->
@@ -257,11 +200,17 @@ $cur_date=date('Y-m-d');
               <div class="clearfix"></div>
             </div>
           </div>
-        </div>
+        </div>  
+          
+        
       </div>
       <!-- Matter ends -->
     </div>
   </div>
+  
+  <?php
+  }
+  ?>
 </div>
 </div>
 <!-- Mainbar ends -->
@@ -278,8 +227,9 @@ function showformmaterial(id)
 	document.getElementById('material_id').value=id;
 	showmaterialform(id);
 }
+
 function showmaterialform(id) {
-	var formData="m_id="+id+"&action=showeeditslider";
+	var formData="m_id="+id+"&action=showeeditpackagetabcontent";
 	//alert(formData);
     $.ajax({
         url: 'ajax.php',
